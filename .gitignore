@@ -3,6 +3,8 @@ game/cache/
 game/saves/
 log.txt
 traceback.txt
+*.rpyc
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
