@@ -17,7 +17,9 @@ label start:
         $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
     scene bg black
     show part3
-    
+
+    play music "audio/part3music.mp3" 
+
     w "HELLOOOOOOOOO! And welcome to the College Application Game Show!!! Your only source of non-stress-inducing, college application based entertainment- that may or may not have any real life consequences!!"
 
     w "Today we welcome our newest contestant: [playerName]!!!!"
@@ -45,8 +47,8 @@ label start:
 
     w "Anyywaayyysss, let’s play"
 
-
-    # Game 1 
+    label game1:
+        
     menu Game1_1:
         w "What kind of family do you have?"
         "Elf":
@@ -83,11 +85,13 @@ label start:
             play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             "Wow, I'd hate to have that many fingers!"
     
+    stop music
     "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
 
-
-    # Game 2
+    label game2:
+    
+    
 
     
 
