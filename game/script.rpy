@@ -14,8 +14,7 @@ label start:
     $ playerName = renpy.input("What is your name, Delightful Contestant?")
     $ playerName = playerName.strip()
     if playerName == "":
-        $ playerName="iclickedtofastthroughthisgameiforgotmyownname"
-    define c1 = Character(playerName, who_color="#e91313")
+        $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
     scene bg black
     show part3
     
