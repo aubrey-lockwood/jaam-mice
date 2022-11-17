@@ -26,16 +26,20 @@ label start:
     menu ready:
         "How do you feel [playerName]? Are you ready to create your perfect application????"
         "Yes":
+            w "Alrighty then, let’s..."
+            w "APPLY TO COLLEGE!!!"
+        
+        "No":
+            w "Sucks for you I guess!!! We're doing it anyway!"
+            w "Let's..."
+            w "APPLY TO COLLEGE!!!"
+        
 
+        w "First up, you must decide on your background information." 
+        
+        w "Now remember, the choices you make now will impact you forever and are extremely important."
 
-    "Today our contestants are [character1], [character2], and [playerName]!"
-
-
-
-
-
-    "We'll Start with your family background and demographics. Remember, people at home, you can all see the contestants' answers, but they can't see each other!"
-
+        w "Anyywaayyysss, let’s play"
 
 
     # Game 1 
