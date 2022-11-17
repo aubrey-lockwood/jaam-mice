@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15: choice menuitem expects a non-empty block.
-    "Elf":
-          ^
+File "game/script.rpy", line 92: expected a keyword argument, colon, or end of line.
+    textbutton id "text":
+                  ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Nov 16 17:55:17 2022
+Wed Nov 16 22:38:50 2022

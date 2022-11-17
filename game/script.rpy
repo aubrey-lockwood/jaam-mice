@@ -2,7 +2,6 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define w = Character("Wizard", who_color="#13D1E9")
 
 # The game starts here.
 label start:
@@ -76,13 +75,21 @@ label start:
     "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
 
-
+    label game_two:
+        w "Starting part 2, the resume!!!"
     # Game 2
 
-    screen 
-
-    
-
+    $ extra_curic = {"test","test","test"}
+    $ athing = "Pizza Making"
+    screen textbutton_screen:
+        window id "window":
+            vbox:
+                spacing 10
+                textbutton "text":
+                    action AddToSet(extra_curic, "help")
+    call screen textbutton_screen
+    w "fun times"
+    w "so did you do a thing?? [extra_curic]"
         
 
     # This ends the game.
