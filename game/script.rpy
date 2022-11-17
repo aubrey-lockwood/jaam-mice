@@ -55,17 +55,17 @@ label start:
             w "Fascinating!"
         "Goblin":
             play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            "Fascinating!"
+            w "Fascinating!"
 
     menu Game1_2:
         w "And where do you live?"
         "In a tree":
             play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            "Wow, really?"
+            w "Wow, really?"
         
         "Under a bridge":
             play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            "Wow, really?"
+            w "Wow, really?"
 
     menu Game1_3:
         w "Next up, what do you like to eat for dinner?"
@@ -82,11 +82,12 @@ label start:
             w "Wow, I'd hate to have that many fingers!"
         "Less than three":
             play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            "Wow, I'd hate to have that many fingers!"
+            w "Wow, I'd hate to have that many fingers!"
     
     stop music
-    "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
+    w "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
+    play music "audio/part3music.mp3" 
 
     label game_two:
         w "Starting part 2, the resume!!!"
