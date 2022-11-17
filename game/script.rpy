@@ -2,18 +2,20 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define w = Character("Wizard", who_color="#13D1E9")
 
 # The game starts here.
 label start:
 
 
-    $ character1 = "TEST"
-    $ character2 = "TEST2" 
-
-    $ playerName = "TESTP"
-
-    define w = Character("Wizard", who_color="#13D1E9")
-
+    $ character1 = "Hùng Vasylyna"
+    $ character2 = "Leila Rana"
+    
+    $ player_name = renpy.input("What is your name, Delightful Contestant?")
+    $ player_name = player_name.strip()
+    if player_name == "":
+        $ player_name="iclickedtofastthroughthisgameiforgotmyownname"
+    define c1 = Character(player_name, who_color="#e91313")
     scene bg black
     show part3
     
@@ -49,15 +51,12 @@ label start:
             "Fascinating!"
         "Goblin":
             "Fascinating!"
-
     menu Game1_2:
         "And where do you live?"
         "In a tree":
-            "Wow, really?"
-        
+            "Wow, really?" 
         "Under a bridge":
             "Wow, really?"
-
     menu Game1_3:
         "Next up, what do you like to eat for dinner?"
         "Acorns":
@@ -70,18 +69,10 @@ label start:
             "Wow, I'd hate to have that many fingers!"
         "Less than three":
             "Wow, I'd hate to have that many fingers!"
-    
     "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
-
-
     # Game 2
-
-    screen 
-
-    
-
-        
+    screen
 
     # This ends the game.
     return
