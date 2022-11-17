@@ -89,7 +89,7 @@ label start:
 
     play music "audio/part3music.mp3" 
 
-    label game_two:
+    label game2:
         w "Starting part 2, the resume!!!"
     # Game 2
 
