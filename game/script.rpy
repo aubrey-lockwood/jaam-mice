@@ -6,7 +6,6 @@ define w = Character("Wizard", who_color="#13D1E9")
 # The game starts here.
 label start:
 
-
     $ character1 = "Hùng Vasylyna"
     $ character2 = "Leila Rana"
     
@@ -92,19 +91,48 @@ label start:
     label game2:
         w "Starting part 2, the resume!!!"
     # Game 2
-
-    $ extra_curic = {"test","test","test"}
+                
+    $ ec = { 'Study', 'Exercise', 'Eat', 'Drink', 'Be Merry' }
+    # This is a dictionary mapping a period to a ????
+    default player_ec = {'?','?'}
 
     show screen textbutton_screen
     screen textbutton_screen:
-        #window id "window":
-        vbox:
-            spacing 10
-            textbutton "text":
-                action AddToSet(extra_curic, "help")
+        frame:
+            align (0.5, 0.5)
+            xsize 500
+            ysize 310
+            vbox:
+                label "Choose 3 Extracurriculars":
+                    text_xalign 0.5
+                null height 5
+                xfill True
+                for i in ec:
+                    textbutton i:
+                        text_xalign 0.5
+                        selected False
+                        if i in player_ec:
+                            action RemoveFromSet(player_ec, i)
+                            text_color "#ffff00"
+                            sensitive True
+                        else:
+                            if len(player_ec) <= 3:
+                                action AddToSet(player_ec, i) 
+                                text_color "#ffffff"
+                                sensitive True
+                            
+            textbutton _("Done"):
+                align (0.7, 0.6)
+                if len(player_ec) == 4:
+                    sensitive True
+                    text_color "#ffffff"
+                    action [Return(True), RemoveFromSet(player_ec,'?')]
+                else:
+                    action Notify("Please choose 3")
 
-    w "fun times"
-    w "so did you do a thing?? [extra_curic]"
+    $ ui.interact()
+    hide screen textbutton_screen
+    w "so did you do a thing?? [player_ec]"
         
 
     # This ends the game.
