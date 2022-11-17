@@ -92,22 +92,31 @@ label start:
     label game_two:
         w "Starting part 2, the resume!!!"
     # Game 2
-
-    $ extra_curic = {}
+                
+    $ ec = { 'Study', 'Exercise', 'Eat', 'Drink', 'Be Merry' }
+    # This is a dictionary mapping a period to a ????
+    default player_ec = {'?','?'}
 
     show screen textbutton_screen
     screen textbutton_screen:
-        #window id "window":
-        vbox:
-            spacing 10
-            textbutton "help":
-                align (0.5, 0.5)
-                action AddToSet(extra_curic, "help")
-                # give me a sec I got to fix this unaction RemoveFromSet(e_C,"help")
+        frame:
+            xfill True
+            align (0.5, 0.5)
+            vbox:
+                label "Extracurriculars"
+                null height 5
+                for i in ec:
+                    textbutton i action AddToSet(player_ec, i)
+            textbutton _("Done"):
+                action [Return(True), RemoveFromSet(player_ec,'?')]
+                xfill True
 
-    " "
+                text_xalign 0.5
+        null
+
+    " ..... "
     hide screen textbutton_screen
-    w "so did you do a thing?? [extra_curic]"
+    w "so did you do a thing?? [player_ec]"
         
 
     # This ends the game.

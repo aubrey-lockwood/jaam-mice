@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 103: expected 'name' not found.
-    hide screen
-               ^
+File "game/script.rpy", line 128: expected statement.
+    RemoveFromSet(player_ec,'?')
+                                ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Nov 17 03:04:52 2022
+Thu Nov 17 03:45:30 2022
