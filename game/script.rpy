@@ -11,11 +11,11 @@ label start:
     $ character1 = "Hùng Vasylyna"
     $ character2 = "Leila Rana"
     
-    $ player_name = renpy.input("What is your name, Delightful Contestant?")
-    $ player_name = player_name.strip()
-    if player_name == "":
-        $ player_name="iclickedtofastthroughthisgameiforgotmyownname"
-    define c1 = Character(player_name, who_color="#e91313")
+    $ playerName = renpy.input("What is your name, Delightful Contestant?")
+    $ playerName = playerName.strip()
+    if playerName == "":
+        $ playerName="iclickedtofastthroughthisgameiforgotmyownname"
+    define c1 = Character(playerName, who_color="#e91313")
     scene bg black
     show part3
     
