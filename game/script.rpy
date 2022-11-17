@@ -92,18 +92,18 @@ label start:
         w "Starting part 2, the resume!!!"
     # Game 2
                 
-    $ ec = { 'Study', 'Exercise', 'Eat', 'Drink', 'Be Merry' }
+    $ ec = {"Ferret training", "Blaseball", "Hackey Sack for Unicorns", "Troll Hair Designs", "Bed Frame Wood Testing", "Graveyard Patrol Volunteering", "Sitting on Babies", "The Toot Town Fart Symphony", "Wings for Fairies", "Ladder Testing", "Portabella Mushroom Connoisseur", "Pizza Throwing Club"}
     # This is a dictionary mapping a period to a ????
     default player_ec = {'?','?'}
 
     show screen textbutton_screen
     screen textbutton_screen:
         frame:
-            align (0.5, 0.5)
-            xsize 500
-            ysize 310
+            align (0.5, 0.35)
+            xsize 700
+            ysize 700
             vbox:
-                label "Choose 3 Extracurriculars":
+                label "Choose 5 Extracurriculars":
                     text_xalign 0.5
                 null height 5
                 xfill True
@@ -116,19 +116,19 @@ label start:
                             text_color "#ffff00"
                             sensitive True
                         else:
-                            if len(player_ec) <= 3:
+                            if len(player_ec) <= 5:
                                 action AddToSet(player_ec, i) 
                                 text_color "#ffffff"
                                 sensitive True
                             
             textbutton _("Done"):
-                align (0.7, 0.6)
-                if len(player_ec) == 4:
+                align (0.9, 0.99)
+                if len(player_ec) == 6:
                     sensitive True
                     text_color "#ffffff"
                     action [Return(True), RemoveFromSet(player_ec,'?')]
                 else:
-                    action Notify("Please choose 3")
+                    action Notify("Please choose 5")
 
     $ ui.interact()
     hide screen textbutton_screen
