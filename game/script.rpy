@@ -17,14 +17,14 @@ label start:
     scene bg black
     show part3
     
-    "HELLOOOOOOOOO! And welcome to the College Application Game Show!!! Your only source of non-stress-inducing, college application based entertainment- that may or may not have any real life consequences!!"
+    w "HELLOOOOOOOOO! And welcome to the College Application Game Show!!! Your only source of non-stress-inducing, college application based entertainment- that may or may not have any real life consequences!!"
 
-    "Today we welcome our newest contestant: [playerName]!!!!"
+    w "Today we welcome our newest contestant: [playerName]!!!!"
 
-    "How do you feel [playerName]? Are you ready to create your perfect application????"
+    w "How do you feel [playerName]? Are you ready to create your perfect application????"
 
     menu ready:
-        "How do you feel [playerName]? Are you ready to create your perfect application????"
+        w "How do you feel [playerName]? Are you ready to create your perfect application????"
         "Yes":
             w "Alrighty then, let’s..."
             w "APPLY TO COLLEGE!!!"
@@ -35,53 +35,48 @@ label start:
             w "APPLY TO COLLEGE!!!"
         
 
-        w "First up, you must decide on your background information." 
+    w "First up, you must decide on your background information." 
         
-        w "Now remember, the choices you make now will impact you forever and are extremely important."
+    w "Now remember, the choices you make now will impact you forever and are extremely important."
 
-        w "Anyywaayyysss, let’s play"
+    w "Anyywaayyysss, let’s play"
 
 
     # Game 1 
     menu Game1_1:
-        "What kind of family do you have?"
+        w "What kind of family do you have?"
         "Elf":
-            "Fascinating!"
+            w "Fascinating!"
         "Goblin":
-            "Fascinating!"
+            w "Fascinating!"
 
     menu Game1_2:
-        "And where do you live?"
+        w "And where do you live?"
         "In a tree":
-            "Wow, really?"
+            w "Wow, really?"
         
         "Under a bridge":
-            "Wow, really?"
+            w "Wow, really?"
 
     menu Game1_3:
-        "Next up, what do you like to eat for dinner?"
+        w "Next up, what do you like to eat for dinner?"
         "Acorns":
-            "Great choice!"
+            w "Great choice!"
         "Horse chesnuts":
-            "Great choice!"
+            w "Great choice!"
     menu Game1_4:
-        "How many fingers do you have?"
+        w "How many fingers do you have?"
         "More than seven":
-            "Wow, I'd hate to have that many fingers!"
+            w "Wow, I'd hate to have that many fingers!"
         "Less than three":
-            "Wow, I'd hate to have that many fingers!"
+            w "Wow, I'd hate to have that many fingers!"
     
-    "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
+    w "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
 
 
     # Game 2
 
-    screen 
-
-    
-
-        
 
     # This ends the game.
     return
