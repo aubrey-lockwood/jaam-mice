@@ -10,11 +10,10 @@ label start:
     $ character1 = "Hùng Vasylyna"
     $ character2 = "Leila Rana"
     
-    $ player_name = renpy.input("What is your name, Delightful Contestant?")
-    $ player_name = player_name.strip()
-    if player_name == "":
-        $ player_name="iclickedtofastthroughthisgameiforgotmyownname"
-    define c1 = Character(player_name, who_color="#e91313")
+    $ playerName = renpy.input("What is your name, Delightful Contestant?")
+    $ playerName = playerName.strip()
+    if playerName == "":
+        $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
     scene bg black
     show part3
     
@@ -28,11 +27,14 @@ label start:
         w "How do you feel [playerName]? Are you ready to create your perfect application????"
         "Yes":
             w "Alrighty then, let’s..."
+            play sound "audio/applytocollegechant.mp3" fadeout 1.0
             w "APPLY TO COLLEGE!!!"
         
         "No":
+            play sound "audio/laughtrackshort.mp3" fadeout 1.0
             w "Sucks for you I guess!!! We're doing it anyway!"
             w "Let's..."
+            play sound "audio/applytocollegechant.mp3" fadeout 1.0
             w "APPLY TO COLLEGE!!!"
         
 
@@ -47,29 +49,37 @@ label start:
     menu Game1_1:
         w "What kind of family do you have?"
         "Elf":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             w "Fascinating!"
         "Goblin":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             "Fascinating!"
 
     menu Game1_2:
         w "And where do you live?"
         "In a tree":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             "Wow, really?"
         
         "Under a bridge":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             "Wow, really?"
 
     menu Game1_3:
         w "Next up, what do you like to eat for dinner?"
         "Acorns":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             w "Great choice!"
         "Horse chesnuts":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             w "Great choice!"
     menu Game1_4:
         w "How many fingers do you have?"
         "More than seven":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             w "Wow, I'd hate to have that many fingers!"
         "Less than three":
+            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
             "Wow, I'd hate to have that many fingers!"
     
     "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
