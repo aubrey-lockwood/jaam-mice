@@ -30,6 +30,7 @@ label start:
             w "APPLY TO COLLEGE!!!"
         
         "No":
+            play sound "audio/laughtrackshort.mp3" fadeout 1.0
             w "Sucks for you I guess!!! We're doing it anyway!"
             w "Let's..."
             w "APPLY TO COLLEGE!!!"
