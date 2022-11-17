@@ -6,7 +6,7 @@ define w = Character("Wizard", who_color="#13D1E9")
 # The game starts here.
 label start:
 
-
+    jump game_two
     $ character1 = "Hùng Vasylyna"
     $ character2 = "Leila Rana"
     
@@ -89,17 +89,20 @@ label start:
         w "Starting part 2, the resume!!!"
     # Game 2
 
-    $ extra_curic = {"test","test","test"}
+    $ extra_curic = {}
 
     show screen textbutton_screen
     screen textbutton_screen:
         #window id "window":
         vbox:
             spacing 10
-            textbutton "text":
+            textbutton "help":
+                align (0.5, 0.5)
                 action AddToSet(extra_curic, "help")
+                # give me a sec I got to fix this unaction RemoveFromSet(e_C,"help")
 
-    w "fun times"
+    " "
+    hide screen textbutton_screen
     w "so did you do a thing?? [extra_curic]"
         
 
