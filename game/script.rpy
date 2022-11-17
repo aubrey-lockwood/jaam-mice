@@ -6,7 +6,6 @@ define w = Character("Wizard", who_color="#13D1E9")
 # The game starts here.
 label start:
 
-    jump game_two
     $ character1 = "Hùng Vasylyna"
     $ character2 = "Leila Rana"
     
@@ -100,21 +99,38 @@ label start:
     show screen textbutton_screen
     screen textbutton_screen:
         frame:
-            xfill True
             align (0.5, 0.5)
+            xsize 500
+            ysize 310
             vbox:
-                label "Extracurriculars"
+                label "Choose 3 Extracurriculars":
+                    text_xalign 0.5
                 null height 5
-                for i in ec:
-                    textbutton i action AddToSet(player_ec, i)
-            textbutton _("Done"):
-                action [Return(True), RemoveFromSet(player_ec,'?')]
                 xfill True
+                for i in ec:
+                    textbutton i:
+                        text_xalign 0.5
+                        selected False
+                        if i in player_ec:
+                            action RemoveFromSet(player_ec, i)
+                            text_color "#ffff00"
+                            sensitive True
+                        else:
+                            if len(player_ec) <= 3:
+                                action AddToSet(player_ec, i) 
+                                text_color "#ffffff"
+                                sensitive True
+                            
+            textbutton _("Done"):
+                align (0.7, 0.6)
+                if len(player_ec) == 4:
+                    sensitive True
+                    text_color "#ffffff"
+                    action [Return(True), RemoveFromSet(player_ec,'?')]
+                else:
+                    action Notify("Please choose 3")
 
-                text_xalign 0.5
-        null
-
-    " ..... "
+    $ ui.interact()
     hide screen textbutton_screen
     w "so did you do a thing?? [player_ec]"
         
