@@ -3,20 +3,92 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define w = Character("Wizard", who_color="#13D1E9")
+define boss = Character("Boss", who_color="#F6B414")
 # The game starts here.
 label start:
 
-    $ character1 = "Hùng Vasylyna"
-    $ character2 = "Leila Rana"
+    $playerName = "PLACEHOLDER" # This is a placeholder for the playerName variable (FIXME)
+
+
+    label part1:
     
-    $ playerName = renpy.input("What is your name, Delightful Contestant?")
-    $ playerName = playerName.strip()
-    if playerName == "":
-        $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
+    # OPEN SCENE (FIXME)
+    
+    # BOSS ENTERS (FIXME)
+
+    boss "Hello [playerName]. I have a nice new stack of applications for you to go through today."
+    boss "Remember, you have to decide whether they should be recommended for admittance to our university or not."
+    boss "Don't forget to look back at the specifications I gave you for who should be admitted or not! It's really important that you stick to those rules, because having certain types of students will really make the university look good." # add emphasis on "certain students?"
+    
+    # LOOK DOWN (FIXME)
+
+    # MANILA FOLDER APPEARS ON THE DESK (FIXME)
+
+    # RULES APPEAR / GLOW IN CORNER (FIXME)
+
+    # LOOK UP (FIXME)
+
+    boss "Alright, with that, I'll be off. You shouldn't have any issues with this."
+    boss "Good luck!"
+
+    # BOSS DISAPPEARS (FIXME)
+
+    # LOOK DOWN (FIXME)
+
+    $approveCount = 0
+    $rejectCount = 0
+
+    show screen task("Sort the applications to decide if they should be recommeneded, or not.")
+
+    show screen appCounter() 
+
+    show screen sortGuide() 
+    
+    show screen applicationSort(0) 
+    
+    with fade
+
+
+    if ui.interact():
+        $ approveCount += 1
+
+    else:
+        $ rejectCount += 1
+
+    hide screen applicationSort 
+
+    show screen applicationSort(1)
+
+    with fade
+
+    if ui.interact():
+        $ approveCount += 1
+
+    else:
+        $ rejectCount += 1
+
+    hide screen task
+    
+    hide screen appCounter
+    
+    hide screen sortGuide
+
+    hide screen applicationSort
+
+    with fade
+    
+
+
+    
+    # $ playerName = renpy.input("What is your name, Delightful Contestant?")
+    # $ playerName = playerName.strip()
+    # if playerName == "":
+    #    $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
     scene bg black
     show part3
 
     play music "audio/part3music.mp3" 
+
 
     w "HELLOOOOOOOOO! And welcome to the College Application Game Show!!! Your only source of non-stress-inducing, college application based entertainment- that may or may not have any real life consequences!!"
 
@@ -84,54 +156,24 @@ label start:
             w "Wow, I'd hate to have that many fingers!"
     
     stop music
+
     w "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
     play music "audio/part3music.mp3" 
 
-    label game2:
-        w "Starting part 2, the resume!!!"
     # Game 2
+    label game2:
+    
+    w "Starting part 2, the resume!!!"
                 
     $ ec = {"Ferret training", "Blaseball", "Hackey Sack for Unicorns", "Troll Hair Designs", "Bed Frame Wood Testing", "Graveyard Patrol Volunteering", "Sitting on Babies", "The Toot Town Fart Symphony", "Wings for Fairies", "Ladder Testing", "Portabella Mushroom Connoisseur", "Pizza Throwing Club"}
-    # This is a dictionary mapping a period to a ????
+    # This is a dictionary mapping a period to a ???? 
     default player_ec = {'?','?'}
 
-    show screen textbutton_screen
-    screen textbutton_screen:
-        frame:
-            align (0.5, 0.35)
-            xsize 700
-            ysize 700
-            vbox:
-                label "Choose 5 Extracurriculars":
-                    text_xalign 0.5
-                null height 5
-                xfill True
-                for i in ec:
-                    textbutton i:
-                        text_xalign 0.5
-                        selected False
-                        if i in player_ec:
-                            action RemoveFromSet(player_ec, i)
-                            text_color "#ffff00"
-                            sensitive True
-                        else:
-                            if len(player_ec) <= 5:
-                                action AddToSet(player_ec, i) 
-                                text_color "#ffffff"
-                                sensitive True
-                            
-            textbutton _("Done"):
-                align (0.9, 0.99)
-                if len(player_ec) == 6:
-                    sensitive True
-                    text_color "#ffffff"
-                    action [Return(True), RemoveFromSet(player_ec,'?')]
-                else:
-                    action Notify("Please choose 5")
+    show screen game2
 
-    $ ui.interact()
-    hide screen textbutton_screen
+    $ ui.interact() # What is the purpose of this line? (FIXME)
+    hide screen game2
     w "so did you do a thing?? [player_ec]"
         
 

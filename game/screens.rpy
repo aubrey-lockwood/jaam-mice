@@ -276,6 +276,137 @@ style quick_button_text:
     properties gui.button_text_properties("quick_button")
 
 
+## game2 Screen
+##
+## For use in game2
+
+screen game2():
+    frame:
+        align (0.5, 0.35)
+        xsize 700
+        ysize 700
+        vbox:
+            label "Choose 5 Extracurriculars":
+                text_xalign 0.5
+            null height 5
+            xfill True
+            for i in ec:
+                textbutton i:
+                    text_xalign 0.5
+                    selected False
+                    if i in player_ec:
+                        action RemoveFromSet(player_ec, i)
+                        text_color "#ffff00"
+                        sensitive True
+                    else:
+                        if len(player_ec) <= 5:
+                            action AddToSet(player_ec, i) 
+                            text_color "#ffffff"
+                            sensitive True
+                        
+        textbutton _("Done"):
+            align (0.9, 0.99)
+            if len(player_ec) == 6:
+                sensitive True
+                text_color "#ffffff"
+                action [Return(True), RemoveFromSet(player_ec,'?')]
+            else:
+                action Notify("Please choose 5")
+
+## Task Screen
+##
+## 
+
+screen task(currentTask):
+    frame: 
+        xpadding 30
+        ypadding 15
+        xalign 0.05
+        yalign 0.02
+
+        text "{size=-10}TASK: [currentTask] {/size}"
+
+
+## Application Sorting Screen
+##
+##
+
+screen applicationSort(appNum):
+    python:
+        with open(renpy.loader.transfn('applications/{}.txt'.format(appNum))) as application: # opens the appropriate application data based on appNum
+            name = application.readline()
+            actScore = application.readline()
+            satScore = application.readline()
+            extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+
+    
+    hbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 20
+
+        button: #approval button
+            xsize 200 
+            ysize 200 
+
+            yalign 0.5
+
+            action Return(True)
+
+            add Solid ("#13D810")
+        
+        frame:              #ADD APPLICATION BACKGROUND (FIXME)
+            xsize 400
+            ysize 800
+            vbox: #placeholder until application background art is here
+
+                text name
+                text actScore
+                text satScore
+                text extracurriculars 
+
+        button: # rejection button
+            xsize 200
+            ysize 200
+
+            yalign 0.5
+
+            action Return(False)
+
+            add Solid ("#F31010")
+
+## Application Counter
+##
+##
+
+screen appCounter():
+    frame:
+        xalign 0.95
+        yalign 0.02
+
+        vbox:
+            text "Recommended Applications: [approveCount]"
+            text "Not Recommended Applications: [rejectCount]"
+
+
+## Sorting Guidelines
+##
+##
+
+screen sortGuide():
+    frame:
+        xalign 0.05
+        yalign 0.8
+
+        text "What to put in recommended list: \n   -ACT score: 32+ / SAT score: 1450+\n    -Played on at least (1) Varsity High School Sport\n -Was on at least (1) leadership board for a club or group\n -Had at least 250 service hours\n\nDo Not Recommend:\n  -ACT score: 31 or lower / SAT score: 1440 or lower"
+
+
+        
+            
+
+
+
+
 ################################################################################
 ## Main and Game Menu Screens
 ################################################################################

@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 110: u'text_xalign' is not a keyword argument or valid child for the vbox statement.
-    text_xalign 0.5
-               ^
+File "game/script.rpy", line 43: expected statement.
+    parallel:
+            ^
+
+File "game/script.rpy", line 46: expected statement.
+    parallel:
+            ^
+
+File "game/script.rpy", line 49: expected statement.
+    parallel:
+            ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Nov 17 05:24:36 2022
+Fri Dec  2 04:32:54 2022
