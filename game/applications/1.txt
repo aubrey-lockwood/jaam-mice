@@ -2,4 +2,5 @@ Gordana
 600
 1700
 golf,volleyball,idk
+250
 True

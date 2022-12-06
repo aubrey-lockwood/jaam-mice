@@ -338,6 +338,7 @@ screen applicationSort(appNum):
             actScore = application.readline()
             satScore = application.readline()
             extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+            serviceHours = application.readline()
             correctChoice = ('True' == application.readline())
 
     frame:
@@ -366,7 +367,7 @@ screen applicationSort(appNum):
                     xsize 400
                     ysize 300
 
-                    text "{size=-18}What to put in recommended list: \n   -ACT score: 32+ / SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower / SAT score: 1440 or lower{/size}":
+                    text "{size=-18}Recommended list: \n   -ACT score: 32+ \n SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower / SAT score: 1440 or lower{/size}":
                         color "#000000"
 
                 hbox:
@@ -407,6 +408,8 @@ screen applicationSort(appNum):
                     text actScore:
                         color "#000000"
                     text satScore:
+                        color "#000000"
+                    text serviceHours:
                         color "#000000"
                     text extracurriculars:
                         color "#000000" 
@@ -488,8 +491,47 @@ screen impossibleSort():
                 textbutton "Pass":
                     action Return(False)
         
-        
+## Bandaids
+##
+##
+
+screen bandaids():
+    frame:
+        xalign 0.5
+        yalign 0.5
+
+        xsize 1000
+        ysize 800
+
+
+        background Frame("images/bandaids.png")
+
+        fixed:
+            xalign 0.5
+            yalign 0.2
+
+            xsize 1000
+            ysize 800
+
+            spacing 100
             
+            button:
+                xalign 0.368
+                yalign 0.5
+
+                xsize 135
+                ysize 500
+
+                action Return(True)
+
+            button:
+                xalign 0.61
+                yalign 0.5
+
+                xsize 135
+                ysize 500
+                action Return(False)
+
 
 
 

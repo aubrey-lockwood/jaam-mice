@@ -23,6 +23,8 @@ label start:
     show bg officeopen:
         zoom 0.4
 
+    play music "audio/UARTS_Admissions_Office_White_Noise.mp3"
+
     
     # OPEN SCENE (FIXME)
     
@@ -111,7 +113,11 @@ label start:
                 else:
                     renpy.call_screen("impossibleSortI") # finally forced to click pass
 
+        hide screen task
+
         label finalApps2:
+
+        show screen task("Sort this second set of applications. Why were they separated?")
 
         python:
             applications = range(11, 15)
@@ -121,6 +127,22 @@ label start:
 
                 if renpy.call_screen("impossibleSort"): #if you click "try again", you have to restart this section. Reinforce defeated feeling!
                     renpy.jump("finalApps2")
+        
+        hide screen task
+
+        narrator "Oh no! Looks like you got a paper cut!"
+        narrator "Make sure to take care of that correctly!"
+
+        "you go to get a bandage"
+
+        narrator "Which bandage will you use?"
+        
+        show screen bandaids
+
+        if ui.interact():
+            hide screen bandaids
+            jump finalApps2
+            
                 
 
     
