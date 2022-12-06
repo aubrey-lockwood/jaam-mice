@@ -370,11 +370,11 @@ screen applicationSort(appNum):
                         color "#000000"
 
                 hbox:
-                    fixed:
-                        xsize 30   
                     xsize 330
                     spacing 30
 
+                    fixed:
+                        xsize 30   
 
                     button: #approval button
                         xsize 150 
@@ -441,9 +441,52 @@ screen wrongSort():
         vbox:
             text "Oh no! That wasn't right. Make sure to check the recommendation lists before deciding!"
 
-            textbutton "Next":
+            textbutton "Try Again":
                 xalign 0.5
                 action Return(True)
+
+
+## Impossible Sort I
+##
+## First iteration of the impossible sort scenario. Prevents weirdness with looping back through
+## the forced fails 
+
+screen impossibleSortI():
+    frame:
+        ysize 200
+
+        xalign 0.5
+        yalign 0.5
+
+        vbox:
+            text "These applications are trickier..."
+
+            textbutton "Pass":
+                action Return()
+
+
+## Impossible Sort
+## 
+##
+
+screen impossibleSort():
+    frame:
+        ysize 200
+
+        xalign 0.5
+        yalign 0.5
+        
+        vbox:
+            text "I can't figure out how to categorize these!"
+
+            hbox:
+                xalign 0.5
+
+                textbutton "Try Again":
+                    action Return(True)
+                
+                textbutton "Pass":
+                    action Return(False)
         
         
             

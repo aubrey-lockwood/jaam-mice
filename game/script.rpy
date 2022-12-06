@@ -54,7 +54,7 @@ label start:
         window hide
         show screen task("Sort the appplications to decide if they should be recommended or not!")
         python:
-            applications = range(2)
+            applications = range(7)
 
             for i in applications:
                 if (not renpy.call_screen("applicationSort", i)):
@@ -92,14 +92,36 @@ label start:
     boss "They must've gotten separated from the others, I'm not sure why."
     boss "Here you go!" 
     
+    show bg officeclosed with fade
+    
+    show bg desk with fade
 
     label finalApps:
+        window hide
+        show screen task("Sort this second set of applications. Why were they separated?")
+        python:
+            applications = range(10, 13)
 
-    # SORTING GAME PART 2 (FIXME)
+            for i in applications:
+                renpy.call_screen("applicationSort", 10)
 
-    
+                if i < 12:
+                    renpy.call_screen("wrongSort") # 2 failed iterations
 
+                else:
+                    renpy.call_screen("impossibleSortI") # finally forced to click pass
 
+        label finalApps2:
+
+        python:
+            applications = range(11, 15)
+
+            for i in applications:
+                renpy.call_screen("applicationSort", i)
+
+                if renpy.call_screen("impossibleSort"): #if you click "try again", you have to restart this section. Reinforce defeated feeling!
+                    renpy.jump("finalApps2")
+                
 
     
     scene bg black
