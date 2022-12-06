@@ -4,6 +4,7 @@
 # name of the character.
 define w = Character("Wizard", who_color="#13D1E9")
 define boss = Character("Boss", who_color="#F6B414")
+define narrator = Character("", who_color="#209D02")
 # The game starts here.
 label start:
 
@@ -35,48 +36,70 @@ label start:
 
     # LOOK DOWN (FIXME)
 
-    $approveCount = 0
-    $rejectCount = 0
-
-    show screen task("Sort the applications to decide if they should be recommeneded, or not.")
-
-    show screen appCounter() 
-
-    show screen sortGuide() 
+    label firstApps:
     
-    show screen applicationSort(0) 
+    $applications = 2
+
+    while applications < 2:
+        $applications += 1 #this is disgusting, but apparently renpy doesn't have for loops for some reason. *why*
+        window hide 
+
+        show screen task("Sort the applications to decide if they should be recommeneded, or not.")
+
+        show screen sortGuide() 
     
-    with fade
+        show screen applicationSort(0) 
+    
+        with fade
 
 
-    if ui.interact():
-        $ approveCount += 1
+        if (ui.interact() == False):
+            hide screen task
+            hide screen sortGuide
+            hide screen applicationSort
 
-    else:
-        $ rejectCount += 1
+            show screen wrongSort
 
-    hide screen applicationSort 
+            with fade
+            if ui.interact():
+                hide screen wrongSort with fade
+                jump firstApps
 
-    show screen applicationSort(1)
-
-    with fade
-
-    if ui.interact():
-        $ approveCount += 1
-
-    else:
-        $ rejectCount += 1
+        hide screen applicationSort 
 
     hide screen task
-    
-    hide screen appCounter
     
     hide screen sortGuide
 
     hide screen applicationSort
 
     with fade
+
+    # BOSS REENTERS (FIXME)
+
+    boss "Oh, hi [playerName]! How has application sorting been going?"
+
+    menu howFeel:
+        boss "Oh, hi [playerName]! How has applications sorting been going?"
+
+        "Good":
+            boss "Well that's good, because I just found a few more for you to categorize as well!"
+
+        "Not so good":
+            boss "I'm sorry to hear that."
+            boss "Well, luckily you only have a few left."
+            boss "Here are the last applications for you to go through today."
+
+    boss "They must've gotten separated from the others, I'm not sure why."
+    boss "Here you go!" 
     
+
+    label finalApps:
+
+    # SORTING GAME PART 2 (FIXME)
+
+    
+
 
 
     

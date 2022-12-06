@@ -338,6 +338,7 @@ screen applicationSort(appNum):
             actScore = application.readline()
             satScore = application.readline()
             extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+            correctChoice = ('True' == application.readline())
 
     
     hbox:
@@ -345,15 +346,25 @@ screen applicationSort(appNum):
         yalign 0.5
         spacing 20
 
-        button: #approval button
-            xsize 200 
-            ysize 200 
+        vbox:
 
             yalign 0.5
+            
+            button: #approval button
+                xsize 200 
+                ysize 200 
 
-            action Return(True)
+                action Return(correctChoice)
 
-            add Solid ("#13D810")
+                add Solid ("#13D810")
+
+            button: # rejection button
+                xsize 200
+                ysize 200
+
+                action Return(not correctChoice)
+
+                add Solid ("#F31010")
         
         frame:              #ADD APPLICATION BACKGROUND (FIXME)
             xsize 400
@@ -365,15 +376,6 @@ screen applicationSort(appNum):
                 text satScore
                 text extracurriculars 
 
-        button: # rejection button
-            xsize 200
-            ysize 200
-
-            yalign 0.5
-
-            action Return(False)
-
-            add Solid ("#F31010")
 
 ## Application Counter
 ##
@@ -400,7 +402,22 @@ screen sortGuide():
 
         text "What to put in recommended list: \n   -ACT score: 32+ / SAT score: 1450+\n    -Played on at least (1) Varsity High School Sport\n -Was on at least (1) leadership board for a club or group\n -Had at least 250 service hours\n\nDo Not Recommend:\n  -ACT score: 31 or lower / SAT score: 1440 or lower"
 
+## Incorrect Sort
+##
+##
 
+screen wrongSort():
+    frame:
+        ysize 200
+
+        xalign 0.9
+        
+        vbox:
+            text "Oh no! That wasn't right. Make sure to check the recommendation lists before deciding!"
+
+            textbutton "Next":
+                action Return(True)
+        
         
             
 
