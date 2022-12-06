@@ -1,1 +1,6 @@
-Mees
+Benjamin
+35
+1560
+Gardening Club President,Varsity Tennis,Student Body President
+500
+True

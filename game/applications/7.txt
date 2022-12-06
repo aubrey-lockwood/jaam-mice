@@ -1,0 +1,6 @@
+Harry
+23
+1200
+Theater Club,Acapella
+100
+False

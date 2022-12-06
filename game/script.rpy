@@ -6,7 +6,6 @@ define w = Character("Wizard", who_color="#13D1E9")
 define boss = Character("Boss", who_color="#F6B414")
 define narrator = Character("", who_color="#209D02")
 
-image officeopen = Image("images/bg officeopen.png", ) 
 # The game starts here.
 label start:
 
@@ -15,27 +14,22 @@ label start:
     scene bg black
     show bg black
 
-    $ playerName = renpy.input("What is your name, Delightful Contestant?")
+    $ playerName = renpy.input("What is your name, admissions officer?")
     $ playerName = playerName.strip()
     if playerName == "":
         $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
 
-    show bg officeopen:
+    show bg officeclosed:
         zoom 0.4
 
     play music "audio/UARTS_Admissions_Office_White_Noise.mp3"
 
-    
-    # OPEN SCENE (FIXME)
-    
-    # BOSS ENTERS (FIXME)
+    show bg bosspresent with fade
 
     boss "Hello [playerName]. I have a nice new stack of applications for you to go through today."
     boss "Remember, you have to decide whether they should be recommended for admittance to our university or not."
     boss "Don't forget to look back at the specifications I gave you for who should be admitted or not! It's really important that you stick to those rules, because having certain types of students will really make the university look good." # add emphasis on "certain students?"
     
-    # LOOK DOWN (FIXME)
-
     # MANILA FOLDER APPEARS ON THE DESK (FIXME)
 
     # RULES APPEAR / GLOW IN CORNER (FIXME)
@@ -45,9 +39,7 @@ label start:
     boss "Alright, with that, I'll be off. You shouldn't have any issues with this."
     boss "Good luck!"
 
-    # BOSS DISAPPEARS (FIXME)
-
-    show bg officeclosed with fade
+    show bg officeopen with fade
 
     show bg desk with fade
 
@@ -56,7 +48,7 @@ label start:
         window hide
         show screen task("Sort the appplications to decide if they should be recommended or not!")
         python:
-            applications = range(7)
+            applications = range(10)
 
             for i in applications:
                 if (not renpy.call_screen("applicationSort", i)):
@@ -70,11 +62,11 @@ label start:
     
     hide screen applicationSort
     
-    show bg officeclosed
+    show bg officeopen
 
     with fade
 
-    show bg officeopen with fade
+    show bg bosspresent with fade
 
     # BOSS REENTERS (FIXME)
 

@@ -356,6 +356,7 @@ screen applicationSort(appNum):
 
             xsize 1100
             ysize 950
+            spacing 220
 
             vbox:
                 spacing 375
@@ -367,7 +368,7 @@ screen applicationSort(appNum):
                     xsize 400
                     ysize 300
 
-                    text "{size=-18}Recommended list: \n   -ACT score: 32+ \n SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower / SAT score: 1440 or lower{/size}":
+                    text "{size=-18}Recommended list: \n   -ACT score: 32+ \n SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower\n SAT score: 1440 or lower\n    -Less than 250 service hours\n  -Less than 3 extracurriculars{/size}":
                         color "#000000"
 
                 hbox:
@@ -397,21 +398,21 @@ screen applicationSort(appNum):
                 yalign 0.3
                 xalign 0
 
-                xsize 250
+                xsize 500
                 ysize 500
                 vbox: 
                     xalign 0
                     spacing 0
 
-                    text name:
+                    text ("Name: " +name):
                         color "#000000"
-                    text actScore:
+                    text ("ACT: " + actScore):
                         color "#000000"
-                    text satScore:
+                    text ("SAT: " + satScore):
                         color "#000000"
-                    text serviceHours:
+                    text ("Service Hours: " + serviceHours):
                         color "#000000"
-                    text extracurriculars:
+                    text ("Extracurricular Activities: \n" + extracurriculars):
                         color "#000000" 
             
 
