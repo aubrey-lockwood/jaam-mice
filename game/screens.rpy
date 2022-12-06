@@ -338,6 +338,7 @@ screen applicationSort(appNum):
             actScore = application.readline()
             satScore = application.readline()
             extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+            serviceHours = application.readline()
             correctChoice = ('True' == application.readline())
 
     frame:
@@ -355,6 +356,7 @@ screen applicationSort(appNum):
 
             xsize 1100
             ysize 950
+            spacing 220
 
             vbox:
                 spacing 375
@@ -366,15 +368,15 @@ screen applicationSort(appNum):
                     xsize 400
                     ysize 300
 
-                    text "{size=-18}What to put in recommended list: \n   -ACT score: 32+ / SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower / SAT score: 1440 or lower{/size}":
+                    text "{size=-18}Recommended list: \n   -ACT score: 32+ \n SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower\n SAT score: 1440 or lower\n    -Less than 250 service hours\n  -Less than 3 extracurriculars{/size}":
                         color "#000000"
 
                 hbox:
-                    fixed:
-                        xsize 30   
                     xsize 330
                     spacing 30
 
+                    fixed:
+                        xsize 30   
 
                     button: #approval button
                         xsize 150 
@@ -396,19 +398,21 @@ screen applicationSort(appNum):
                 yalign 0.3
                 xalign 0
 
-                xsize 250
+                xsize 500
                 ysize 500
                 vbox: 
                     xalign 0
                     spacing 0
 
-                    text name:
+                    text ("Name: " +name):
                         color "#000000"
-                    text actScore:
+                    text ("ACT: " + actScore):
                         color "#000000"
-                    text satScore:
+                    text ("SAT: " + satScore):
                         color "#000000"
-                    text extracurriculars:
+                    text ("Service Hours: " + serviceHours):
+                        color "#000000"
+                    text ("Extracurricular Activities: \n" + extracurriculars):
                         color "#000000" 
             
 
@@ -441,12 +445,94 @@ screen wrongSort():
         vbox:
             text "Oh no! That wasn't right. Make sure to check the recommendation lists before deciding!"
 
-            textbutton "Next":
+            textbutton "Try Again":
                 xalign 0.5
                 action Return(True)
+
+
+## Impossible Sort I
+##
+## First iteration of the impossible sort scenario. Prevents weirdness with looping back through
+## the forced fails 
+
+screen impossibleSortI():
+    frame:
+        ysize 200
+
+        xalign 0.5
+        yalign 0.5
+
+        vbox:
+            text "These applications are trickier..."
+
+            textbutton "Pass":
+                action Return()
+
+
+## Impossible Sort
+## 
+##
+
+screen impossibleSort():
+    frame:
+        ysize 200
+
+        xalign 0.5
+        yalign 0.5
         
+        vbox:
+            text "I can't figure out how to categorize these!"
+
+            hbox:
+                xalign 0.5
+
+                textbutton "Try Again":
+                    action Return(True)
+                
+                textbutton "Pass":
+                    action Return(False)
         
+## Bandaids
+##
+##
+
+screen bandaids():
+    frame:
+        xalign 0.5
+        yalign 0.5
+
+        xsize 1000
+        ysize 800
+
+
+        background Frame("images/bandaids.png")
+
+        fixed:
+            xalign 0.5
+            yalign 0.2
+
+            xsize 1000
+            ysize 800
+
+            spacing 100
             
+            button:
+                xalign 0.368
+                yalign 0.5
+
+                xsize 135
+                ysize 500
+
+                action Return(True)
+
+            button:
+                xalign 0.61
+                yalign 0.5
+
+                xsize 135
+                ysize 500
+                action Return(False)
+
 
 
 

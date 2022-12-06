@@ -1,5 +1,6 @@
-Julia
-500
-1600
-thing,Thing,and Thing
+Yara
+33
+1450
+Varsity Soccer,Debate Team,Yearbook Club Secretary
+275
 True

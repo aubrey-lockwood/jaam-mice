@@ -1,5 +1,6 @@
-Mira
-600
-1700
-golf,volleyball,idk
+Samuel
+N/A
+1530
+Varsity Basketball Captain,School Paper Editor,Varsity Golf
+300
 True
