@@ -340,41 +340,77 @@ screen applicationSort(appNum):
             extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
             correctChoice = ('True' == application.readline())
 
-    
-    hbox:
+    frame:
+
+        background Frame("images/open manilla folder with paper.png")
+        xsize 2000
+        ysize 1600
+
         xalign 0.5
-        yalign 0.5
-        spacing 20
-
-        vbox:
-
-            yalign 0.5
-            
-            button: #approval button
-                xsize 200 
-                ysize 200 
-
-                action Return(correctChoice)
-
-                add Solid ("#13D810")
-
-            button: # rejection button
-                xsize 200
-                ysize 200
-
-                action Return(not correctChoice)
-
-                add Solid ("#F31010")
+        yalign 0.3
         
-        frame:              #ADD APPLICATION BACKGROUND (FIXME)
-            xsize 400
-            ysize 800
-            vbox: #placeholder until application background art is here
+        hbox:
+            yalign 0.5
+            xalign 0.425
 
-                text name
-                text actScore
-                text satScore
-                text extracurriculars 
+            xsize 1100
+            ysize 950
+
+            vbox:
+                spacing 375
+                xsize 400
+
+
+                fixed:
+
+                    xsize 400
+                    ysize 300
+
+                    text "{size=-18}What to put in recommended list: \n   -ACT score: 32+ / SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower / SAT score: 1440 or lower{/size}":
+                        color "#000000"
+
+                hbox:
+                    fixed:
+                        xsize 30   
+                    xsize 330
+                    spacing 30
+
+
+                    button: #approval button
+                        xsize 150 
+                        ysize 150 
+
+                        action Return(correctChoice)
+
+                        add Solid ("#13D810")
+
+                    button: # rejection button
+                        xsize 150
+                        ysize 150
+
+                        action Return(not correctChoice)
+
+                        add Solid ("#F31010")
+    
+            fixed:
+                yalign 0.3
+                xalign 0
+
+                xsize 250
+                ysize 500
+                vbox: 
+                    xalign 0
+                    spacing 0
+
+                    text name:
+                        color "#000000"
+                    text actScore:
+                        color "#000000"
+                    text satScore:
+                        color "#000000"
+                    text extracurriculars:
+                        color "#000000" 
+            
 
 
 ## Application Counter
@@ -391,17 +427,6 @@ screen appCounter():
             text "Not Recommended Applications: [rejectCount]"
 
 
-## Sorting Guidelines
-##
-##
-
-screen sortGuide():
-    frame:
-        xalign 0.05
-        yalign 0.8
-
-        text "What to put in recommended list: \n   -ACT score: 32+ / SAT score: 1450+\n    -Played on at least (1) Varsity High School Sport\n -Was on at least (1) leadership board for a club or group\n -Had at least 250 service hours\n\nDo Not Recommend:\n  -ACT score: 31 or lower / SAT score: 1440 or lower"
-
 ## Incorrect Sort
 ##
 ##
@@ -410,12 +435,14 @@ screen wrongSort():
     frame:
         ysize 200
 
-        xalign 0.9
+        xalign 0.5
+        yalign 0.5
         
         vbox:
             text "Oh no! That wasn't right. Make sure to check the recommendation lists before deciding!"
 
             textbutton "Next":
+                xalign 0.5
                 action Return(True)
         
         
