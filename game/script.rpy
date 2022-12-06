@@ -5,13 +5,24 @@
 define w = Character("Wizard", who_color="#13D1E9")
 define boss = Character("Boss", who_color="#F6B414")
 define narrator = Character("", who_color="#209D02")
+
+image officeopen = Image("images/bg officeopen.png", ) 
 # The game starts here.
 label start:
 
-    $playerName = "PLACEHOLDER" # This is a placeholder for the playerName variable (FIXME)
-
-
     label part1:
+
+    scene bg black
+    show bg black
+
+    $ playerName = renpy.input("What is your name, Delightful Contestant?")
+    $ playerName = playerName.strip()
+    if playerName == "":
+        $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
+
+    show bg officeopen:
+        zoom 0.4
+
     
     # OPEN SCENE (FIXME)
     
@@ -34,46 +45,34 @@ label start:
 
     # BOSS DISAPPEARS (FIXME)
 
-    # LOOK DOWN (FIXME)
+    show bg officeclosed with fade
+
+    show bg desk with fade
+
 
     label firstApps:
-    
-    $applications = 2
+        window hide
+        show screen task("Sort the appplications to decide if they should be recommended or not!")
+        python:
+            applications = range(2)
 
-    while applications < 2:
-        $applications += 1 #this is disgusting, but apparently renpy doesn't have for loops for some reason. *why*
-        window hide 
-
-        show screen task("Sort the applications to decide if they should be recommeneded, or not.")
-
-        show screen sortGuide() 
-    
-        show screen applicationSort(0) 
-    
-        with fade
-
-
-        if (ui.interact() == False):
-            hide screen task
-            hide screen sortGuide
-            hide screen applicationSort
-
-            show screen wrongSort
-
-            with fade
-            if ui.interact():
-                hide screen wrongSort with fade
-                jump firstApps
-
-        hide screen applicationSort 
+            for i in applications:
+                if (not renpy.call_screen("applicationSort", i)):
+                    renpy.call_screen("wrongSort")
+                    renpy.jump("firstApps")
+                    renpy.with_statement(fade)
+                else:
+                    renpy.with_statement(fade)
 
     hide screen task
     
-    hide screen sortGuide
-
     hide screen applicationSort
+    
+    show bg officeclosed
 
     with fade
+
+    show bg officeopen with fade
 
     # BOSS REENTERS (FIXME)
 
@@ -103,10 +102,6 @@ label start:
 
 
     
-    # $ playerName = renpy.input("What is your name, Delightful Contestant?")
-    # $ playerName = playerName.strip()
-    # if playerName == "":
-    #    $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
     scene bg black
     show part3
 
@@ -195,7 +190,7 @@ label start:
 
     show screen game2
 
-    $ ui.interact() # What is the purpose of this line? (FIXME)
+    $ ui.interact()
     hide screen game2
     w "so did you do a thing?? [player_ec]"
         
