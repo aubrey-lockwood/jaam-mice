@@ -108,6 +108,8 @@ label start:
         hide screen task
 
         label finalApps2:
+            show bg desk with fade
+            window hide
 
         show screen task("Sort this second set of applications. Why were they separated?")
 
@@ -122,10 +124,14 @@ label start:
         
         hide screen task
 
+        show bg bloodydesk
+
         narrator "Oh no! Looks like you got a paper cut!"
         narrator "Make sure to take care of that correctly!"
 
-        "you go to get a bandage"
+        "(You go to get a bandage.)"
+
+        show bg breakroom with fade
 
         narrator "Which bandage will you use?"
         
@@ -134,7 +140,7 @@ label start:
         if ui.interact():
             hide screen bandaids
             jump finalApps2
-            
+        hide screen bandaids
                 
 
     
