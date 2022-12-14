@@ -523,17 +523,17 @@ label start:
 
             player "Hey, I like the music you're playing. Who is it?"
 
-            jonathan "Well, actually, it's an original performed by me and my band. I'm on drum set."
+            jeremiah "Well, actually, it's an original performed by me and my band. I'm on drum set."
 
             player "That's so cool! What's your band called?"
 
-            jonathan "Jacque Efercon. It's, like, super original."
+            jeremiah "Jacque Efercon. It's, like, super original."
 
-            jonathan "You've probably never heard anything like us before."
+            jeremiah "You've probably never heard anything like us before."
 
             thoughts "(Oh my god, is this guy serious?)"
 
-            jonathan "Oh, and I'm Jeremiah by the way."
+            jeremiah "Oh, and I'm Jeremiah by the way."
 
             player "Hey, I'm [playerName]. And your band seems really..."
 
@@ -541,15 +541,15 @@ label start:
 
             player "That must look really good on college applications, right?"
 
-            jonathan "Oh yeah, I guess it could. I didn't put it on my application though, because I'm basically guarunteed to get into my top school."
+            jeremiah "Oh yeah, I guess it could. I didn't put it on my application though, because I'm basically guarunteed to get into my top school."
 
-            jonathan "Both of my parents went there, and they donate like, a couple hundred grand every year too."
+            jeremiah "Both of my parents went there, and they donate like, a couple hundred grand every year too."
 
-            jonathan "If I don't get in, then the admissions office must have been taken over by aliens or something."
+            jeremiah "If I don't get in, then the admissions office must have been taken over by aliens or something."
 
             player "It sounds like you've got everything figured out then."
 
-            jonathan "Yeah basically. What about you, what are your plans for after high school?"
+            jeremiah "Yeah basically. What about you, what are your plans for after high school?"
 
             player "Oh, uhhh..."
 
@@ -559,11 +559,11 @@ label start:
 
             player "I might take a gap year or start working."
 
-            jonathan "Pff, good luck with that."
+            jeremiah "Pff, good luck with that."
 
             player "What's that supposed to mean?"
 
-            jonathan "I just meant like, my dad always says that if you don't go to college right after high school, then you're just lazy and going to end up a nobody."
+            jeremiah "I just meant like, my dad always says that if you don't go to college right after high school, then you're just lazy and going to end up a nobody."
 
             thoughts "(What is this guy saying? I can't believe his parents raised him to think like this!)"
 
@@ -571,7 +571,7 @@ label start:
 
             player "It's been... insightful talking to you. I'll see you around."
 
-            jonathan "Yeah, see ya!"
+            jeremiah "Yeah, see ya!"
 
             narrator "He turns the music back up"
 
