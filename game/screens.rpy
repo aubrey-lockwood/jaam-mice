@@ -469,9 +469,9 @@ screen applicationView(appNum):
                 spacing 375
                 xsize 400
 
-                frame:
-                    background Frame("[appNum].png")
-                    
+                image "[appNum].png": 
+                
+                    ysize 500
                     xsize 400
 
                 textbutton "Dismiss":

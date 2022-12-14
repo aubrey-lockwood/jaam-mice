@@ -2,13 +2,20 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define w = Character("Wizard", who_color="#13D1E9")
-define boss = Character("Boss", who_color="#F6B414")
-define narrator = Character("", who_color="#209D02")
-define thoughts = Character("", who_color="#C55226")
 
-define miro = Character("Miro", who_color="5032c7")
-define rosalia = Character("Rosalía", who_color="#d42f68")
+define default_speed = 70
+
+define w = Character("Wizard", who_color="#13D1E9", what_slow_cps=default_speed, what_slow_abortable=True)
+define boss = Character("Boss", who_color="#F6B414", what_slow_cps=default_speed, what_slow_abortable=True)
+
+define narrator = Character("", who_color="#209D02", what_slow_cps=default_speed, what_slow_abortable=True)
+define thoughts = Character("", who_color="#C55226", what_slow_cps=default_speed, what_slow_abortable=True)
+
+define miro = Character("Miro", who_color="#5032c7", what_slow_cps=default_speed, what_slow_abortable=True)
+define rosalia = Character("Rosalía", who_color="#d42f68", what_slow_cps=default_speed, what_slow_abortable=True)
+define cecily = Character("Cecily", who_color="#6197ed", what_slow_cps=default_speed, what_slow_abortable=True)
+
+define paSystem = Character("PA System", what_slow_cps=default_speed, what_slow_abortable=True)
 
 # The game starts here.
 label start:
@@ -258,7 +265,7 @@ label start:
 
             player "Thanks! Will do."
 
-            hide window
+            window hide
 
             menu miro_application2:
                 "Check the application again":
@@ -304,7 +311,7 @@ label start:
                     $iHaveToPutABlockHere = 0
             
             thoughts "(Wait, I think she might be one of the applicants too)"
-            hide window
+            window hide
             menu rosalia_application:
                 thoughts "(Wait, I think she might be one of the applicants too)"
 
@@ -356,6 +363,128 @@ label start:
 
             #FINISH ROSALIA SECTION (FIXME)
 
+        label cecily:
+            
+            narrator "You walk out of the bathroom, and see a girl fumbling with items in her locker. She's tossing items into an athletic bag, and as you walk by..."
+            
+            narrator "*SMACK*" #Sound effect (FIXME)
+
+            cecily "Oh my god! I'm so sorry!"
+
+            menu:
+                cecily "Oh my god! I'm so sorry!"
+
+                "Don't worry, it's fine":
+                    $iHaveToPutABlockHere = 0
+
+                "OW!":
+                    $iHaveToPutABlockHere = 0
+            
+            cecily "Sorry, I can't believe I was that careless. I'm so late for the volleyball bus-"
+
+            paSystem "Volleyball players, the bus to today's tournament will be delayed until further notice."
+
+            paSystem "On another note: If anyone has seen the bus driver, please contact office staff."
+
+            cecily "Well, I guess I rushed for nothing."
+
+            narrator "She sits down next to her locker, catching her breath"
+
+            thoughts "(Another person from the applications! I should check hers again...)"
+
+            menu:
+                "(Another person from the applications! I should check hers again...)"
+
+                "View application":
+                    window hide                    
+                    show screen applicationView(11)
+                    $ui.interact()
+                    hide screen applicationView
+
+
+            cecily "This team is so tiring..."
+
+            cecily "I love being the captain, but between the team, classes, and filling out applications, I'm always running."
+
+            cecily "I'm Cecily, I don't think we've met before"
+
+            player "I'm [playerName], I'm new here."
+
+            cecily "Oh, cool. Hopefully you've got all your applications all figured out already."
+
+            player "How is your application going?"
+
+            cecily "I have no idea what to do with my essay."
+
+            cecily "I feel like I can barely talk about anything I did in high school"
+
+            cecily "I've poured my life into the volleyball team here, but it's so hard to talk about, with my transiton happeing in the middle of it all."
+
+            cecily "The friends I made through volleyball and all the work involved in getting to where I am is so
+            important to me, but I feel like I'll have to do so much explaining if I even mention I'm a trans athlete."
+
+            player "What do you mean?"
+
+            cecily "I guess it's just that people have made it such an issue."
+
+            cecily "It stresses me out every day, and I have no clue who's going to be reading this"
+
+            cecily "Like, even a bunch of 'well meaning, progressive people' don't know anything about how my life works."
+
+            cecily "I end up feeling like I have to walk them through every step of understanding basic things about me."
+
+            player "That sounds difficult. How did you manage that?"
+
+            cecily "My friends are a huge help, especially Miro."
+
+            cecily "Despite being busy literaly all the time, he's dropped everything more than once to help when I've been overwhelmed by everything."
+            
+            player "Oh, I met Miro earlier! He seemed..."
+
+            menu:
+                player "Oh, I met Miro earlier! He seemed..."
+
+                "Cold":
+                    cecily "Yeah, I think that's a lot of peoples' first impression of him."
+
+                    cecily "But if you get to know him, you kinda figure him out."
+
+                    cecily "He's really good at listening, and is actually willing to put in work to help his friends."
+
+                "Stressed":
+
+                    cecily "Yeah, he's really worried about applications."
+
+                    cecily "He says he doesn't have any extracurriculars he car record"
+
+                    cecily "It's honestly crazy to me that anyone could look at him and think he's not doing enough."
+
+                    cecily "I usually worry he's doing too much..."
+
+                    cecily "Not only does he literally work jobs to support his family, but he's the kind of person to really 
+                    put in work to support his friends."
+
+                    player "He sounds like a really good friend"
+
+                    cecily "Yeah, between him and Jonathan, I've got a lot of support here"
+
+                    player "People keep mentioning Jonathan. How is he?"
+
+                    cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
+
+                    cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
+
+                    narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
+
+                    narrator "A man zooms past you in the hallway, heading for the main entrance!"
+
+                    cecily "Is that... the bus driver?"
+
+                    cecily "OH!"
+
+                    cecily "That's definitely him. Uh, I gotta run!"
+
+                    narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
 
 
     
