@@ -602,9 +602,9 @@ label start:
 
                 "View Application":
                     window hide
-                    show screen viewApplication(14)
+                    show screen applicationView(14)
                     $ui.interact()
-                    hide screen viewApplication
+                    hide screen applicationView
 
             thoughts "(Oh! So this is *the* Jonathan that some of the other applicants mentioned.)" 
 
@@ -636,7 +636,7 @@ label start:
 
             player "Oh, wow. It's awesome that you're so supportive of your friends."
 
-            jonathan "You know what, there's actually a bi volleyball game tonight. Are you planning on going?"
+            jonathan "You know what, there's actually a big volleyball game tonight. Are you planning on going?"
 
             jonathan "It would be a great way for you to meet some people."
 
@@ -651,7 +651,20 @@ label start:
                     window hide
                     show screen changedApplicationView(14)
                     $ui.interact()
-                    hide scree changedApplicationView
+                    hide screen changedApplicationView
+
+            menu: 
+                ""
+
+                "Go to P.E.":
+                    $iHaveToPutABlockHere = 0
+
+            narrator "As you enter the gym, you see a dodgeball heading directly for your head!"
+
+            narrator "*SMACK*"
+
+            with show bg black with fade
+    
                 
 
                         
@@ -662,6 +675,7 @@ label start:
             zoom 4.5
         show w neutral:
             zoom 0.2
+        with fade
             
 
     play music "audio/part3music.mp3" 

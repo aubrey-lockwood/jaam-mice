@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 20: is not terminated with a newline. (Check strings and parenthesis.)
-    define jeremiah = Character("Jeremiah", who_color="#d19900"
+File "game/script.rpy", line 666: expected 'simple_expression' not found.
+    with show bg black with fade
+         ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 17:32:20 2022
+Wed Dec 14 17:47:58 2022
