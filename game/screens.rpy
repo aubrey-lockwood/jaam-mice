@@ -362,6 +362,8 @@ screen applicationSort(appNum):
                 spacing 375
                 xsize 400
 
+                #add photo based on appNum (FIXME)
+
 
                 fixed:
 
@@ -415,6 +417,152 @@ screen applicationSort(appNum):
                     text ("Extracurricular Activities: \n" + extracurriculars):
                         color "#000000" 
             
+## Application Viewer 
+##
+## For viewing applications in part 2
+
+
+screen applicationView(appNum):
+    python:
+        with open(renpy.loader.transfn('applications/{}.txt'.format(appNum))) as application: # opens the appropriate application data based on appNum
+            name = application.readline()
+            actScore = application.readline()
+            satScore = application.readline()
+            extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+            serviceHours = application.readline()
+            correctChoice = ('True' == application.readline())
+
+    frame:
+
+        background Frame("images/open manilla folder with paper.png")
+        xsize 2000
+        ysize 1600
+
+        xalign 0.5
+        yalign 0.3
+        
+        hbox:
+            yalign 0.5
+            xalign 0.425
+
+            xsize 1100
+            ysize 950
+            spacing 220
+
+            fixed:
+                spacing 375
+                xsize 400
+
+                #add photo based on appNum (FIXME)
+
+                textbutton "Dismiss":
+                    xalign 0.75
+                    yalign 0.8
+                    action Return(0)
+
+            fixed:
+                yalign 0.3
+                xalign 0
+
+                xsize 500
+                ysize 500
+                vbox: 
+                    xalign 0
+                    spacing 0
+
+                    text ("Name: " +name):
+                        color "#000000"
+                    text ("ACT: " + actScore):
+                        color "#000000"
+                    text ("SAT: " + satScore):
+                        color "#000000"
+                    text ("Service Hours: " + serviceHours):
+                        color "#000000"
+                    text ("Extracurricular Activities: \n" + extracurriculars):
+                        color "#000000" 
+
+## Changed Application Viewer 
+##
+## For viewing the changed applications in part 2
+
+
+screen changedApplicationView(appNum):
+    python:
+        with open(renpy.loader.transfn('applications/{}.txt'.format(appNum))) as application: # opens the appropriate application data based on appNum
+            name = application.readline()
+            actScore = application.readline()
+            satScore = application.readline()
+            extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+            serviceHours = application.readline()
+            correctChoice = ('True' == application.readline())
+
+            application.readline()
+
+            fact1 = application.readline()
+            fact2 = application.readline()
+            fact3 = application.readline()
+
+            textColor = application.readline()
+
+    frame:
+
+        background Frame("images/open manilla folder with paper.png")
+        xsize 2000
+        ysize 1600
+
+        xalign 0.5
+        yalign 0.3
+        
+        hbox:
+            yalign 0.5
+            xalign 0.425
+
+            xsize 1100
+            ysize 950
+            spacing 220
+
+            fixed:
+                spacing 375
+                xsize 400
+
+                #add photo based on appNum (FIXME)
+
+                textbutton "Dismiss":
+                    xalign 0.75
+                    yalign 0.8
+                    action Return(0)
+
+            fixed:
+                yalign 0.3
+                xalign 0
+
+                xsize 500
+                ysize 500
+                vbox: 
+                    xalign 0
+                    spacing 0
+
+                    text ("Name: " +name):
+                        color "#000000"
+                    text ("ACT: " + actScore):
+                        color "#000000"
+                    text ("SAT: " + satScore):
+                        color "#000000"
+                    text ("Service Hours: " + serviceHours):
+                        color "#000000"
+                    text ("Extracurricular Activities: \n" + extracurriculars):
+                        color "#000000" 
+
+                    text (fact1):
+                        color textColor
+                    text (fact2):
+                        color textColor
+                    text (fact3):
+                        color textColor 
+
+                    
+
+
 
 
 ## Application Counter
