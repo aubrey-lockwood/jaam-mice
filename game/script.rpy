@@ -17,6 +17,8 @@ define thoughts = Character("", who_color="#C55226", what_slow_cps=default_speed
 define miro = Character("Miro", who_color="#5032c7", what_slow_cps=default_speed, what_slow_abortable=True)
 define rosalia = Character("Rosalía", who_color="#d42f68", what_slow_cps=default_speed, what_slow_abortable=True)
 define cecily = Character("Cecily", who_color="#6197ed", what_slow_cps=default_speed, what_slow_abortable=True)
+define jeremiah = Character("Jeremiah", who_color="#d19900", what_slow_cps=default_speed, what_slow_abortable=True)
+define jonathan = Character("Jonathan", who_color="#1d3b0e", what_slow_cps=default_speed, what_slow_abortable=True)
 
 define paSystem = Character("PA System", what_slow_cps=default_speed, what_slow_abortable=True)
 
@@ -33,7 +35,7 @@ label start:
     if playerName == "":
         $ playerName ="iclickedtofastthroughthisgameiforgotmyownname"
 
-    define player = Character("[playerName]")
+    define player = Character("[playerName]", what_slow_cps=default_speed, what_slow_abortable=True)
 
     show bg officeclosed:
         zoom 0.4
@@ -500,8 +502,156 @@ label start:
 
 
         label jeremiah:
+            narrator "You are in the parking lot and see a guy leaning on his car with his hands crossed."
 
+            narrator "There is music blaring from the stereo of his car."
+            
+            thoughts "(Oh, there's another applicant, I think)"
 
+            menu:
+                ""
+
+                "View Application":
+                    window hide
+                    show screen applicationView(10)
+                    $ui.interact()
+                    hide screen applicationView
+
+            thoughts "Okay Jeremiah, let's what I don't know about you."
+
+            narrator "You go up to him"
+
+            player "Hey, I like the music you're playing. Who is it?"
+
+            jonathan "Well, actually, it's an original performed by me and my band. I'm on drum set."
+
+            player "That's so cool! What's your band called?"
+
+            jonathan "Jacque Efercon. It's, like, super original."
+
+            jonathan "You've probably never heard anything like us before."
+
+            thoughts "(Oh my god, is this guy serious?)"
+
+            jonathan "Oh, and I'm Jeremiah by the way."
+
+            player "Hey, I'm [playerName]. And your band seems really..."
+
+            player "...interesting..."
+
+            player "That must look really good on college applications, right?"
+
+            jonathan "Oh yeah, I guess it could. I didn't put it on my application though, because I'm basically guarunteed to get into my top school."
+
+            jonathan "Both of my parents went there, and they donate like, a couple hundred grand every year too."
+
+            jonathan "If I don't get in, then the admissions office must have been taken over by aliens or something."
+
+            player "It sounds like you've got everything figured out then."
+
+            jonathan "Yeah basically. What about you, what are your plans for after high school?"
+
+            player "Oh, uhhh..."
+
+            player "I'm not really sure."
+
+            player "I just transferred here so I think I'm going to try to get my bearings before I make any concrete plans."
+
+            player "I might take a gap year or start working."
+
+            jonathan "Pff, good luck with that."
+
+            player "What's that supposed to mean?"
+
+            jonathan "I just meant like, my dad always says that if you don't go to college right after high school, then you're just lazy and going to end up a nobody."
+
+            thoughts "(What is this guy saying? I can't believe his parents raised him to think like this!)"
+
+            player "Wow, okay..."
+
+            player "It's been... insightful talking to you. I'll see you around."
+
+            jonathan "Yeah, see ya!"
+
+            narrator "He turns the music back up"
+
+            menu:
+                ""
+
+                "View Application":
+                    window hide
+                    show screen changedApplicationView(10)
+                    $ui.interact()
+                    hide screen changedApplicationView
+
+            thoughts "(These people are starting to seem pretty different in person than they do on their applications...)"
+
+            menu:
+                ""
+
+                "Go to Lunch":
+                    $iHaveToPutABlockHere = 0
+
+        label jonathan:
+            narrator "You end up in the cafeteria. You quickly notice there is one person that has captured the attention of many."
+
+            thoughts "(Hmmm... that seems like someone else from the applications I should talk to. But who are they?)"
+
+            menu:
+                ""
+
+                "View Application":
+                    window hide
+                    show screen viewApplication(14)
+                    $ui.interact()
+                    hide screen viewApplication
+
+            thoughts "(Oh! So this is *the* Jonathan that some of the other applicants mentioned.)" 
+
+            thoughts "(Now what do I not know about you?)"
+
+            narrator "You approach him."
+
+            player "Hey, my name is [playerName], are you Jonathan?"
+
+            jonathan "Yeah, I'm Jonathan, live and in the flesh!"
+
+            jonathan "And hi, [playerName], it's nice to meet you. Are you new here?"
+
+            thoughts "(This is starting to feel like Groundhog Day...)"
+
+            player "Yeah, I just transferred."
+
+            jonathan "Ah, that makes sense. You see, I kinda know everyone around here. That's my thing, I guess."
+
+            player "How did you get to know everyone so well?"
+
+            player "Do you play a lot of sports, or are you in a bunch of clubs?"
+
+            jonathan "Not really, haha!"
+
+            jonathan "I just really like going to school events. There's just more opportunities to get to know people."
+
+            jonathan "Plus, once I get to know people, it's even more fun ot go support them at their events!"
+
+            player "Oh, wow. It's awesome that you're so supportive of your friends."
+
+            jonathan "You know what, there's actually a bi volleyball game tonight. Are you planning on going?"
+
+            jonathan "It would be a great way for you to meet some people."
+
+            jonathan "I'd be happy to bring you along, if you'd like."
+
+            thoughts "(He seems really nice. The kind of person I'd like as a friend...)"
+
+            menu:
+                ""
+
+                "View Application":
+                    window hide
+                    show screen changedApplicationView(14)
+                    $ui.interact()
+                    hide scree changedApplicationView
                 
 
                         
