@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 394: expected menuitem
-    hide window 
-    ^
+File "game/script.rpy", line 9: invalid syntax
+    Image("wizard_neutral.png", xalign=1.0, yalign 0.6)
+                                                      ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 01:28:34 2022
+Wed Dec 14 14:01:44 2022

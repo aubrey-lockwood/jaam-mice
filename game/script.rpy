@@ -5,7 +5,10 @@
 
 define default_speed = 70
 
-define w = Character("Wizard", who_color="#13D1E9", what_slow_cps=default_speed, what_slow_abortable=True)
+define w = Character("Wizard", who_color="#13D1E9", what_slow_cps=default_speed, what_slow_abortable=True, image="w")
+image w neutral = Image("wizard_neutral.png", xalign=1.0, yalign=0.6, xsize=100, ysize=100)
+
+
 define boss = Character("Boss", who_color="#F6B414", what_slow_cps=default_speed, what_slow_abortable=True)
 
 define narrator = Character("", who_color="#209D02", what_slow_cps=default_speed, what_slow_abortable=True)
@@ -486,10 +489,23 @@ label start:
 
                     narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
 
+                    menu:
+                        ""
 
-    
-    scene bg black
-    show part3
+                        "Check the application again":
+                            window hide
+                            show screen changedApplicationView(11)
+                            $ui.interact()
+                            hide screen changedApplicationView
+
+                        
+
+    label part3:
+        scene bg black
+        show bg withpodium:
+            zoom 4.5
+        show w neutral
+            
 
     play music "audio/part3music.mp3" 
 
