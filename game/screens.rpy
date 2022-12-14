@@ -358,11 +358,13 @@ screen applicationSort(appNum):
             ysize 950
             spacing 220
 
-            vbox:
-                spacing 375
-                xsize 400
+            fixed:
+                yalign 0.5
+                xalign 0.5
 
-                #add photo based on appNum (FIXME)
+                xsize 400
+                ysize 950
+
 
 
                 fixed:
@@ -370,12 +372,26 @@ screen applicationSort(appNum):
                     xsize 400
                     ysize 300
 
+                    yalign 0
+
                     text "{size=-18}Recommended list: \n   -ACT score: 32+ \n SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower\n SAT score: 1440 or lower\n    -Less than 250 service hours\n  -Less than 3 extracurriculars{/size}":
                         color "#000000"
 
+                image "[appNum].png":
+                    xsize 400
+                    ysize 500
+                    
+                    xalign 0.5
+                    yalign 0.45
+
                 hbox:
                     xsize 330
+                    ysize 150
                     spacing 30
+
+                    
+                    xalign 0.5
+                    yalign 0.8
 
                     fixed:
                         xsize 30   
@@ -453,7 +469,10 @@ screen applicationView(appNum):
                 spacing 375
                 xsize 400
 
-                #add photo based on appNum (FIXME)
+                frame:
+                    background Frame("[appNum].png")
+                    
+                    xsize 400
 
                 textbutton "Dismiss":
                     xalign 0.75
@@ -611,9 +630,11 @@ screen impossibleSortI():
         yalign 0.5
 
         vbox:
+            xalign 0.5
             text "These applications are trickier..."
 
             textbutton "Pass":
+                xalign 0.5
                 action Return()
 
 
