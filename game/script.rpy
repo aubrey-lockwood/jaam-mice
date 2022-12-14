@@ -18,7 +18,7 @@ define miro = Character("Miro", who_color="#5032c7", what_slow_cps=default_speed
 define rosalia = Character("Rosalía", who_color="#d42f68", what_slow_cps=default_speed, what_slow_abortable=True)
 define cecily = Character("Cecily", who_color="#6197ed", what_slow_cps=default_speed, what_slow_abortable=True)
 define jeremiah = Character("Jeremiah", who_color="#d19900", what_slow_cps=default_speed, what_slow_abortable=True)
-define jonathan = Character("Jonathan", who_color="#1d3b0e", what_slow_cps=default_speed, what_slow_abortable=True)
+define jonathan = Character("Jonathan", who_color="#24500d", what_slow_cps=default_speed, what_slow_abortable=True)
 
 define paSystem = Character("PA System", what_slow_cps=default_speed, what_slow_abortable=True)
 
@@ -663,7 +663,7 @@ label start:
 
             narrator "*SMACK*"
 
-            with show bg black with fade
+            show bg black with fade
     
                 
 
