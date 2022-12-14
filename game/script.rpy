@@ -8,6 +8,7 @@ define narrator = Character("", who_color="#209D02")
 define thoughts = Character("", who_color="#C55226")
 
 define miro = Character("Miro", who_color="5032c7")
+define rosalia = Character("Rosalía", who_color="#d42f68")
 
 # The game starts here.
 label start:
@@ -269,7 +270,91 @@ label start:
                 "Leave Library?"
 
                 "Go to the Bathroom":
-                    iHaveToPutABlockHere = 0
+                    $iHaveToPutABlockHere = 0
+
+        label rosalia:
+            
+            #show BATHROOM (FIXME)
+
+            
+
+            narrator "You walk into the bathroom and see a girl standing in front of the mirror, applying lip gloss very carefully."
+
+            narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
+
+            #show Rosalia (FIXME)
+
+            menu:
+                narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
+
+                "Leave":
+                    rosalia "Where do you think you're going?"
+
+                    player "Uh, what?"
+
+                    rosalia "Oh, I just meant like..."
+
+                    rosalia "You don't have to leave just because I'm here."
+
+                    player "Okay..."
+
+                    player "...thanks?"
+
+                "Stay":
+                    $iHaveToPutABlockHere = 0
+            
+            thoughts "(Wait, I think she might be one of the applicants too)"
+            hide window
+            menu rosalia_application:
+                thoughts "(Wait, I think she might be one of the applicants too)"
+
+                "View Application":
+                    hide window
+                    show screen applicationView(13)
+                    $ui.interact()
+                    hide screen applicationView
+
+            thoughts "(Maybe I should talk to her, like I talked to Miro."
+
+            player "Hey, you wouldn't happen to be Rosalía by chance, would you?"
+
+            rosalia "Who's asking?"
+
+            player "Me?"
+
+            rosalia "And who are you, exactly?"
+
+            player "Oh, I'm a new student here. I just transferred."
+
+            rosalia "Ugh, imagine transferring here. I would NOT want to be you."
+
+            rosalia "This school kinda sucks."
+
+            player "What do you mean?"
+
+            rosalia "Well, there aren't many extracurricular activities offered here that look good on college applications."
+
+            rosalia "I had to do almost all of mine, like, in the community, or whatever."
+
+            rosalia "But because there wasn't much to do here, that meant that there is a lot of pressure on community service, at least for me."
+
+            rosalia "Thanks Mom!"
+
+            player "Well, how are the people here? It seems like they're pretty nice."
+
+            rosalia "I'm not entirely sure, actually."
+
+            rosalia "I've never really had time to focus on the whole friend thing"
+
+            rosalia "and even when I do try to talk to people, everyone seems, like, intimidated or something."
+
+            rosalia "The only person I kinda know is Jonathan. Have you met him?"
+
+            rosalia "He's nice. I don't know, but it doesn't really matter." 
+            
+            rosalia "I just have to get to college and get as far away from here as I can."
+
+            #FINISH ROSALIA SECTION (FIXME)
 
 
 
