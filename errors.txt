@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 394: expected menuitem
-    hide window 
-    ^
+File "game/script.rpy", line 470: Only one say menuitem may exist per menu.
+    player "He sounds like a really good friend"
+                                                ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 01:28:34 2022
+Wed Dec 14 15:54:16 2022
