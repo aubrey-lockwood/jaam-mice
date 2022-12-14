@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 9: invalid syntax
-    Image("wizard_neutral.png", xalign=1.0, yalign 0.6)
-                                                      ^
+File "game/script.rpy", line 470: Only one say menuitem may exist per menu.
+    player "He sounds like a really good friend"
+                                                ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 14:01:44 2022
+Wed Dec 14 15:54:16 2022

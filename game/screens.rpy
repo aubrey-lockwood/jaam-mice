@@ -432,7 +432,113 @@ screen applicationSort(appNum):
                         color "#000000"
                     text ("Extracurricular Activities: \n" + extracurriculars):
                         color "#000000" 
-            
+## First Application Viewer
+##
+## for viewing applications in part 1 section 1
+
+
+screen firstApplicationSort(appNum):
+    python:
+        with open(renpy.loader.transfn('applications/{}.txt'.format(appNum))) as application: # opens the appropriate application data based on appNum
+            name = application.readline()
+            actScore = application.readline()
+            satScore = application.readline()
+            extracurriculars = '\n'.join(application.readline().split(',')) # reads the next line, splits it on delimeter ',', then processes it into separate lines for display in renpy
+            serviceHours = application.readline()
+            correctChoice = ('True' == application.readline())
+
+    frame:
+
+        background Frame("images/open manilla folder with paper.png")
+        xsize 2000
+        ysize 1600
+
+        xalign 0.5
+        yalign 0.3
+        
+        hbox:
+            yalign 0.5
+            xalign 0.425
+
+            xsize 1100
+            ysize 950
+            spacing 220
+
+            fixed:
+                yalign 0.5
+                xalign 0.5
+
+                xsize 400
+                ysize 950
+
+
+
+                fixed:
+
+                    xsize 400
+                    ysize 300
+
+                    yalign 0
+
+                    text "{size=-18}Recommended list: \n   -ACT score: 32+ \n SAT score: 1450+\n   -Played on at least (1) Varsity High School Sport\n   -Was on at least (1) leadership board for a club or group\n   -Had at least 250 service hours\n\nDo Not Recommend:\n   -ACT score: 31 or lower\n SAT score: 1440 or lower\n    -Less than 250 service hours\n  -Less than 3 extracurriculars{/size}":
+                        color "#000000"
+
+                hbox:
+                    xsize 330
+                    ysize 150
+                    spacing 30
+
+                    
+                    xalign 0.5
+                    yalign 0.8
+
+                    fixed:
+                        xsize 30   
+
+                    button: #approval button
+                        xsize 150 
+                        ysize 150 
+
+                        action Return(correctChoice)
+
+                        add Solid ("#13D810")
+
+                    button: # rejection button
+                        xsize 150
+                        ysize 150
+
+                        action Return(not correctChoice)
+
+                        add Solid ("#F31010")
+    
+            fixed:
+                yalign 0.3
+                xalign 0
+
+                xsize 500
+                ysize 500
+                vbox: 
+                    xalign 0
+                    spacing 0
+
+                    text ("Name: " +name):
+                        color "#000000"
+                    text ("ACT: " + actScore):
+                        color "#000000"
+                    text ("SAT: " + satScore):
+                        color "#000000"
+                    text ("Service Hours: " + serviceHours):
+                        color "#000000"
+                    text ("Extracurricular Activities: \n" + extracurriculars):
+                        color "#000000"
+
+
+
+
+
+
+
+
 ## Application Viewer 
 ##
 ## For viewing applications in part 2

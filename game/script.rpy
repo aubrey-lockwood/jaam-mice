@@ -67,7 +67,7 @@ label start:
             applications = range(10)
 
             for i in applications:
-                if (not renpy.call_screen("applicationSort", i)):
+                if (not renpy.call_screen("firstApplicationSort", i)):
                     renpy.call_screen("wrongSort")
                     renpy.jump("firstApps")
                     renpy.with_statement(fade)
@@ -421,7 +421,7 @@ label start:
 
             cecily "I feel like I can barely talk about anything I did in high school"
 
-            cecily "I've poured my life into the volleyball team here, but it's so hard to talk about, with my transiton happeing in the middle of it all."
+            cecily "I've poured my life into the volleyball team here, but it's so hard to talk about, with my transiton happening in the middle of it all."
 
             cecily "The friends I made through volleyball and all the work involved in getting to where I am is so
             important to me, but I feel like I'll have to do so much explaining if I even mention I'm a trans athlete."
@@ -458,7 +458,7 @@ label start:
 
                     cecily "Yeah, he's really worried about applications."
 
-                    cecily "He says he doesn't have any extracurriculars he car record"
+                    cecily "He says he doesn't have any extracurriculars he can record"
 
                     cecily "It's honestly crazy to me that anyone could look at him and think he's not doing enough."
 
@@ -467,36 +467,42 @@ label start:
                     cecily "Not only does he literally work jobs to support his family, but he's the kind of person to really 
                     put in work to support his friends."
 
-                    player "He sounds like a really good friend"
+            player "He sounds like a really good friend"
 
-                    cecily "Yeah, between him and Jonathan, I've got a lot of support here"
+            cecily "Yeah, between him and Jonathan, I've got a lot of support here"
 
-                    player "People keep mentioning Jonathan. How is he?"
+            player "People keep mentioning Jonathan. How is he?"
 
-                    cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
+            cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
 
-                    cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
+            cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
 
-                    narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
+            narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
 
-                    narrator "A man zooms past you in the hallway, heading for the main entrance!"
+            narrator "A man zooms past you in the hallway, heading for the main entrance!"
 
-                    cecily "Is that... the bus driver?"
+            cecily "Is that... the bus driver?"
 
-                    cecily "OH!"
+            cecily "OH!"
 
-                    cecily "That's definitely him. Uh, I gotta run!"
+            cecily "That's definitely him. Uh, I gotta run!"
 
-                    narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
+            narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
 
-                    menu:
-                        ""
+            menu:
+                ""
 
-                        "Check the application again":
-                            window hide
-                            show screen changedApplicationView(11)
-                            $ui.interact()
-                            hide screen changedApplicationView
+                "Check the application again":
+                    window hide
+                    show screen changedApplicationView(11)
+                    $ui.interact()
+                    hide screen changedApplicationView
+
+
+        label jeremiah:
+
+
+                
 
                         
 
@@ -504,7 +510,8 @@ label start:
         scene bg black
         show bg withpodium:
             zoom 4.5
-        show w neutral
+        show w neutral:
+            zoom 0.2
             
 
     play music "audio/part3music.mp3" 
