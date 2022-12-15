@@ -904,8 +904,80 @@ screen bandaids():
                 ysize 500
                 action Return(False)
 
+## ACCEPTANCE
+##
+## accepted into college
+
+screen accepted():
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
+
+        text "ACCEPTED":
+
+            xalign 0.5
+            yalign 0.5
+
+            color "#13D810"
+
+            size 60
 
 
+
+
+
+## REJECTION
+##
+## rejected from college
+
+screen rejected():
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
+
+        text "REJECTED":
+
+            xalign 0.5
+            yalign 0.5
+
+            color "#F31010"
+
+            size 60
+
+
+## Credits
+##
+## A little screen for our credits!
+
+screen credits():
+    fixed:
+        xalign 0.5
+        yalign 0.5
+
+        xsize 1400
+        ysize 1000
+
+        hbox:
+            spacing 600
+
+            vbox:
+                spacing 100
+                xsize 400
+                text "Writing Lead:":
+                    text_align 0
+                    color "#FFFFFF"
+            vbox:
+                spacing 100
+                xsize 400
+                text "Audrey Hammer":
+                    text_align 1
+                    color "FFFFFF"
 
 
 ################################################################################
