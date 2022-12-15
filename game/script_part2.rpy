@@ -616,7 +616,7 @@ label part2:
         player "It's been... insightful talking to you. I'll see you around."
         jeremiah "Yeah, see ya!"
         narrator "He turns the music back up"
-        play music "audio/part3music.mp3"
+        play music "audio/jeremiahEmoMusic.mp3"
         hide je
         menu:
             "View Application":

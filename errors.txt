@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script_part2.rpy", line 407: invalid syntax
-    i++
-    
-
-File "game/script_part2.rpy", line 416: invalid syntax
-    i++
-    
-
-File "game/script_part2.rpy", line 426: invalid syntax
-    i++
-    
+File "game/script.rpy", line 181: end of line expected.
+    jump part 2
+              ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Dec 15 08:26:46 2022
+Thu Dec 15 10:06:16 2022
