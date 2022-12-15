@@ -2,9 +2,65 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 799: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation.
-    if ui.interact():
-    ^
+The label miro is defined twice, at File "game/script.rpy", line 185:
+        label miro:
+and File "game/script_part2.rpy", line 90:
+    label miro:
+
+
+The label view_application_miro is defined twice, at File "game/script.rpy", line 195:
+            menu view_application_miro:
+and File "game/script_part2.rpy", line 95:
+        menu view_application_miro:
+
+
+The label pester_miro is defined twice, at File "game/script.rpy", line 220:
+            menu pester_miro:
+and File "game/script_part2.rpy", line 120:
+        menu pester_miro:
+
+
+The label miro_application2 is defined twice, at File "game/script.rpy", line 279:
+            menu miro_application2:
+and File "game/script_part2.rpy", line 179:
+        menu miro_application2:
+
+
+The label leave_library is defined twice, at File "game/script.rpy", line 285:
+            menu leave_library:
+and File "game/script_part2.rpy", line 185:
+        menu leave_library:
+
+
+The label rosalia is defined twice, at File "game/script.rpy", line 291:
+        label rosalia:
+and File "game/script_part2.rpy", line 191:
+    label rosalia:
+
+
+The label rosalia_application is defined twice, at File "game/script.rpy", line 324:
+            menu rosalia_application:
+and File "game/script_part2.rpy", line 224:
+        menu rosalia_application:
+
+
+The label cecily is defined twice, at File "game/script.rpy", line 375:
+        label cecily:
+and File "game/script_part2.rpy", line 275:
+    label cecily:
+
+
+The label jeremiah is defined twice, at File "game/script.rpy", line 508:
+        label jeremiah:
+and File "game/script_part2.rpy", line 408:
+    label jeremiah:
+
+
+The label jonathan is defined twice, at File "game/script.rpy", line 599:
+        label jonathan:
+and File "game/script_part2.rpy", line 499:
+    label jonathan:
+
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 19:58:24 2022
+Thu Dec 15 00:02:40 2022
