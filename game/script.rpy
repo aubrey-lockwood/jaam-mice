@@ -58,7 +58,6 @@ label start:
 
     boss "Hello [playerName]. I have a nice new stack of applications for you to go through today."
 
-    #Shortcut for Julia's Testing: DELETE THIS FOR FINAL
 
     boss "Remember, you have to decide whether they should be recommended for admittance to our university or not."
     boss "Don't forget to look back at the specifications I gave you for who should be admitted or not! It's really important that you stick to those rules, because having certain types of students will really make the university look good." # add emphasis on "certain students?"
@@ -100,8 +99,6 @@ label start:
     with fade
 
     show bg bosspresent with fade
-
-    # BOSS REENTERS (FIXME)
 
     boss "Oh, hi [playerName]! How has application sorting been going?"
 
@@ -217,7 +214,7 @@ label start:
     else:
         hide screen binaryQ
 
-        play sound "audio/laughtrackshort.mp3" fadeout 1.0
+        play sound "audio/laughtrackshort.mp3"
         w "Sucks for you I guess!!! We're doing it anyway!"
         w "Let's..."
         play sound "audio/applytocollegechant.mp3" fadeout 1.0
