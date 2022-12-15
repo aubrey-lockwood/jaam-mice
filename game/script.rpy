@@ -809,7 +809,65 @@ label start:
     else:
         w "Nope! Let's get started!"
     hide screen binaryQ
-        
+
+    show screen textInput("Enter a number!")
+    $ age = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a type of family relation, like 'sister' or 'cousin'!")
+    $ relativeType = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a verb ending in ing, like 'jumping'!")
+    $ verb = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a noun, like 'frog'!")
+    $ nounLoser = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a regular adjective, like 'silly'!")
+    $ adjectiveTeacher = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a class you might take at a high school, like 'American Literature'!")
+    $ highSchoolClass = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a person's name!")        
+    $ relativeName = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter an adjective, like 'wonderful'!")
+    $ adjective = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a number!")
+    $ testScore = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a year in high school, like 'sophomore' or 'first year'")
+    $ highSchoolYear = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a location, like 'Alcatraz'!")
+    $ location = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a superlative adjective (ending in -est), like 'easiest'!")
+    $ adjectiveSuper = ui.interact()
+    hide screen textInput
+
+    w "Okay! It's time to read your story!"
+
+    window hide
+    hide w neutral
+    show bg gameshowscreen
+    show screen readStory()
+    with fade
+    $ui.interact()
+
+
 
     # This ends the game.
-    return
+    return 
