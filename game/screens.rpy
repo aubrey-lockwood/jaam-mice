@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -617,7 +616,7 @@ screen readStory():
         xalign 0.75
         yalign 0.5
 
-        text "Back when I was [age], my [relativeType] [relativeName] told me, 'Never quit [verb], or else you will never make it out of here in one piece. You will end up a [nounLoser]. This is the only phrase that got me through [highSchoolClass]. I took [highSchoolClass] when I was a [highSchoolYear]. It was by far the [adjectiveSuper] class I ever took. The teacher was so [adjectiveTeacher]. I got a [testScore] on almost every test. Every time I felt like quitting, though, I remember the words that my [relativeType] told me. This saying gets me through everything, especially when I feel like [verb]. And sometimes, it gives me hope that my [relativeType] will eventually come back from [location] so that they can see all the [adjective] things I have accomplished.":
+        text "Back when I was [age], my [relativeType] [relativeName] told me, 'Never quit [verb], or else you will never make it out of here in one piece. You will end up a [nounLoser].' This is the only phrase that got me through [highSchoolClass]. I took [highSchoolClass] when I was a [highSchoolYear]. It was by far the [adjectiveSuper] class I ever took. The teacher was so [adjectiveTeacher]. I got a [testScore] on almost every test. Every time I felt like quitting, though, I remember the words that my [relativeType] told me. This saying gets me through everything, especially when I feel like [verb]. And sometimes, it gives me hope that my [relativeType] will eventually come back from [location] so that they can see all the [adjective] things I have accomplished.":
             text_align 0.5
             size 35
             line_spacing 20

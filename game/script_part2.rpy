@@ -71,6 +71,7 @@ label part2:
     w "Ahaha HA haha... ha"
     w "ha"
     w "...."
+    play sound "audio/laughtrackshort.mp3"
     w "Oh, and it only counts for the university you were employed at."
     w "Unfortunately high standards they had, didn't they?"
     w "But, don't worry!"
@@ -101,6 +102,7 @@ label part2:
     label miro:
         scene bg black
         show bg black
+        play music "audio/libraryAmbiance.mp3"
         show library background
 
         "It seems you are in the far recesses of the Mclaudin Prepatory School Library"
@@ -109,7 +111,7 @@ label part2:
         "...."
         #typing sound
         show mi
-        "Hidden behind one enclave of forgotten books and storage boxes, sits a desk occupied by a shorter than average student on his computer,"
+        "Hidden behind one enclave of forgotten books and storage boxes, sits a desk occupied by student on his computer,"
         "rapidly clicking and typing with more focus than you've seen anyone work on a google doc before."
         menu miro_introduce:
             "Clear your throat":
@@ -239,7 +241,6 @@ label part2:
         #__________________________
         #MIRO MENU INTERFACE-IN
         $ convo_count = 0;
-
         menu miro_menu:
             "Miro returns to diligently typing his document."
             "Also, I think I recognize you":
@@ -328,13 +329,14 @@ label part2:
         player "Actually how do you leave this death trap library?"
         m "Take a left than continue till the red storage boxes, go in between them, exit's on your left"
         "You give a thumbs up before heading off and following Miro's directions"
+        stop music fadeout 2.0
 
         hide mi
 
         window hide
         menu miro_application2:
             "Check the application again":
-                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
+                play sound "audio/newgameprogress.wav.mp3"
                 show screen changedApplicationView(12)
                 $ui.interact()
                 hide screen changedApplicationView
@@ -346,6 +348,7 @@ label part2:
         menu leave_library:
             "You're back in the cooridor from earlier. Again there's only two options in this twisted corner of the school."
             "Return to Library":
+                show library background:
                 "You wander around the library for even longer than before."
                 "You fint Miro's hidden study spot, but the guy has packed off and left now."
                 "You wander through bookshelves. were there this many before?"
@@ -354,10 +357,14 @@ label part2:
                 thoughts "Ah yes. Left, through, Left."
                 "You finally managed to leave that treacherous hellish dimention"
                 "Best not return anytime soon."
+                show school hallway background:
+                    zoom 0.4
             "Go to the Bathroom down the hall":
                 $iHaveToPutABlockHere = 0
 
     label rosalia:
+    
+        play music "audio/bathroomAmbience.mp3" fadeout 1.0
         scene bg black
         show bathroom:
             zoom 0.4
@@ -378,16 +385,11 @@ label part2:
                 "You wash your hands."
                 "Just to have some sort of reason for going into the bathroom"
                 "You dry your hands."
-        
         rosalia "Ughah. I can't stand this school."
         thoughts "(She also seems familiar...)"
-        "You sift through your old work bag that's now a backpack."
-        "Commedically enough, the applications you were reading this morning are perfectly preserved."
-        thoughts "All of the applications I read today came from this district..."
         window hide
         menu rosalia_application:
-            thoughts "(I think she might be one of the applicants too)"
-            "Look for the girl's file":
+            "(I think she might be one of the applicants too)":
                 hide window
                 show screen applicationView(13)
                 $ui.interact()
@@ -432,11 +434,13 @@ label part2:
             ""
             "Check the application again":
                 window hide
-                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
+                play sound "audio/newgameprogress.wav.mp3"
                 show screen changedApplicationView(13)
                 $ui.interact()
                 hide screen changedApplicationView
+    stop music fadeout 1.0
     label cecily:
+        play music "audio/hallwayNoise.mp3"
         scene bg black
         show school hallway background at center:
                 zoom 0.4
@@ -522,7 +526,7 @@ label part2:
                 cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
                 cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
                 narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
-                play sound "audio/door.wav"
+                play sound "audio/door.wav" fadeout 0.1
                 narrator "A man zooms past you in the hallway, heading for the main entrance!"
                 player "hmmmmm"
                 menu:
@@ -536,7 +540,7 @@ label part2:
         menu:
             ""
             "Check the application again":
-                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
+                play sound "audio/newgameprogress.wav.mp3"
                 window hide
                 show screen changedApplicationView(11)
                 $ui.interact()
@@ -554,7 +558,6 @@ label part2:
 
         menu:
             ""
-
             "View Application":
                 window hide
                 show screen applicationView(10)
@@ -621,7 +624,7 @@ label part2:
         menu:
             "View Application":
                 window hide
-                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
+                play sound "audio/newgameprogress.wav.mp3"
                 show screen changedApplicationView(10)
                 $ui.interact()
                 hide screen changedApplicationView
@@ -633,16 +636,15 @@ label part2:
                 jump screamin
             "Go to Lunch":
                 $iHaveToPutABlockHere = 0
-        stop music fadeout 3.0
+        stop music
     label jonathan:
+        play music "audio/hallwayNoise.mp3"
         scene bg black
         show lunch room background:
             zoom 0.4
-    
         narrator "You end up in the cafeteria. You quickly notice there is one person that has captured the attention of many."
         show jo
         thoughts "(Hmmm... that seems like someone else from the applications I should talk to. But who are they?)"
-
         menu:
             ""
             "View Application":
@@ -650,7 +652,6 @@ label part2:
                 show screen applicationView(14)
                 $ui.interact()
                 hide screen applicationView
-
         thoughts "(Oh! So this is *the* Jonathan that some of the other applicants mentioned.)" 
         thoughts "(Now what do I not know about you?)"
         narrator "You approach him."
@@ -671,29 +672,24 @@ label part2:
         jonathan "I'd be happy to bring you along, if you'd like."
         thoughts "(He seems really nice. The kind of person I'd like as a friend...)"
         hide jo
-
         menu:
             ""
             "View Application":
-                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
+                play sound "audio/newgameprogress.wav.mp3"
                 window hide
                 show screen changedApplicationView(14)
                 $ui.interact()
                 hide screen changedApplicationView
-
         menu:
-
             ""
-
             "Go to P.E.":
                 $iHaveToPutABlockHere = 0
         show gym background:
             zoom 0.4
-
         narrator "As you enter the gym, you see a dodgeball heading directly for your head!"
-
+    
+        play sound "audio/dodgeballBounceSound.mp3"
         narrator "*SMACK*"
-
         show bg black with fade
 
         jump part3
