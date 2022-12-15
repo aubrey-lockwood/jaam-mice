@@ -521,6 +521,7 @@ label part2:
                 cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
                 cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
                 narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
+                play sound "audio/door.wav"
                 narrator "A man zooms past you in the hallway, heading for the main entrance!"
                 player "hmmmmm"
                 menu:
@@ -666,7 +667,6 @@ label part2:
 
         menu:
             ""
-
             "View Application":
                 window hide
                 show screen changedApplicationView(14)
