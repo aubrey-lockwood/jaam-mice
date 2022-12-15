@@ -545,6 +545,8 @@ label part2:
             zoom 0.4
 
         narrator "You are in the parking lot and see a guy leaning on his car with his hands crossed."
+
+        play music "audio/part3music.mp3" fadeout 1.0
         narrator "There is music blaring from the stereo of his car."
         thoughts "(Oh, there's another applicant, I think)"
 
@@ -569,9 +571,10 @@ label part2:
                 jeremiah "Jacque Efercon. It's, like, super original."
                 jeremiah "You've probably never heard anything like us before."
                 player "mmmhhhhmmmmm"
-                jeremiah "Jacque Efercon is the name of my dog. I got Jacque Efercon 4ish years ago when he's a small lil pupster."
+                jeremiah "Jacque Efercon is the name of my dog."
+                jeremiah "I got Jacque Efercon 4ish years ago when he's a small lil pupster."
                 jeremiah "He's been our bands mascot ever since. We've kind of all grown up together"
-                jeremiah "Well Jacque Efercon IS my best bro first."
+                jeremiah "Well, Jacque Efercon is MY best bro first."
                 $i+=1
                 if i < 2:
                     jump jeremiah_main
@@ -611,6 +614,7 @@ label part2:
         player "It's been... insightful talking to you. I'll see you around."
         jeremiah "Yeah, see ya!"
         narrator "He turns the music back up"
+        play music "audio/part3music.mp3"
         hide je
         menu:
             "View Application":
@@ -626,7 +630,7 @@ label part2:
                 jump screamin
             "Go to Lunch":
                 $iHaveToPutABlockHere = 0
-
+        stop music fadeout 3.0
     label jonathan:
         scene bg black
         show lunch room background:

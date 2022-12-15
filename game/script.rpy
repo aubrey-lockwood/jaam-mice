@@ -193,7 +193,7 @@ label start:
         with fade
             
 
-    # play music "audio/part3music.mp3" MUSIC DISABLED FOR SANITY (FIXME)
+    play music "audio/part3music.mp3" #MUSIC DISABLED FOR SANITY
 
     w "HELLOOOOOOOOO! And welcome to the College Application Game Show!!! Your only source of non-stress-inducing, college application based entertainment- that may or may not have any real life consequences!!"
 
@@ -283,7 +283,7 @@ label start:
 
     w "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
-    # play music "audio/part3music.mp3" MUTED FOR SANITY (FIXME) 
+    play music "audio/part3music.mp3" #MUTED FOR SANITY
 
     # Game 2
     label game2:
@@ -306,7 +306,8 @@ label start:
 
     label game3:
 
-    # play music "audio/part3music.mp3" MUTED FOR SANITY (FIXME)  
+    play music "audio/part3music.mp3" 
+    #MUTED FOR SANITY
 
     w "Last, but certainly not least, you must write your very own personal statement."
 
