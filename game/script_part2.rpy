@@ -102,7 +102,8 @@ label part2:
         "The quite numerous collection of books dots the shelves along with many storage boxes for what seems like an ambitious reorginization project."
         "You continue wandering the maze of back shelves."
         "...."
-        #typing soundpr
+        #typing sound
+        show miro standing
         "Hidden behind one enclave of forgotten books and storage boxes, sits a desk occupied by a shorter than average student on his computer,"
         "rapidly clicking and typing with more focus than you’ve seen anyone work on a google doc before."
         menu miro_introduce:
@@ -333,7 +334,6 @@ label part2:
 
 
     label rosalia:
-        
         #show BATHROOM (FIXME)
         scene bg black
         show bathroom
@@ -390,6 +390,7 @@ label part2:
         
         narrator "You walk out of the bathroom, and see a girl fumbling with items in her locker. She's tossing items into an athletic bag, and as you walk by..."
         narrator "*SMACK*" #Sound effect (FIXME)
+        show cecily standing
         cecily "Oh my god! I'm so sorry!"
 
         menu:
