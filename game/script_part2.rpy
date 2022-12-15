@@ -87,7 +87,8 @@ label part2:
     #show bg black
 
     narrator "You are finally able to open your eyes and find yourself in a high school hallway"
-    show school hallway background
+    show school hallway background at center:
+        zoom 0.4
     narrator "A calendar on the wall lists the date as November 14th, 2021"
     narrator "You're in the same clothes(albeit blood free) and your work-bag-now-backpack is swung over your shoulder."
 
@@ -108,9 +109,9 @@ label part2:
         "You continue wandering the maze of back shelves."
         "...."
         #typing sound
-        show miro standing
+        show mi
         "Hidden behind one enclave of forgotten books and storage boxes, sits a desk occupied by a shorter than average student on his computer,"
-        "rapidly clicking and typing with more focus than you’ve seen anyone work on a google doc before."
+        "rapidly clicking and typing with more focus than you've seen anyone work on a google doc before."
         menu miro_introduce:
             "Clear your throat":
                 "The kid doesn't seem to be able to hear you."
@@ -161,13 +162,12 @@ label part2:
                                 jump miro_introduce
                             else:
                                 jump fork
-        "But the guy continues typing at record speeds without removing his headphones."
-
+        "The guy seems to notice your tap and continues typing at record speeds without removing his headphones:"
         m "Not now cecily!"
-        m "I finished lab reporting, and now I'm Applicating even more."
+        m "I just finished lab reporting, and now I'm Applicating some more."
         m "Do you see this focus? This is the Miro focus."
         m "And right now, I gotta, nope, oh wait, uh, section 2, nope 3…. "
-        m "1, 2, 3… and maybe that there, yeah citing those sources, section 3 is what…"
+        m "1, 2, 3… and maybe that there, yeah extra-curriculars sources, section 3 is what…"
         m "Oh, right! Cecily, I should get all this finalized and Ready. To. go. In uh… "
         m "30 or so minutes."
         m "Give or take."
@@ -202,6 +202,7 @@ label part2:
                     mk "ahahhhhhhhhhhhahhhhhhhhhhhhhahah"
                     mk "ahh"
                     mk "AHHHH"
+                    $ keyboard += 1;
                     jump typin
                 else:
                     mk "i got mixed up, thought you were my friend..ahhh"
@@ -240,27 +241,27 @@ label part2:
         #__________________________
         #MIRO MENU INTERFACE-IN
         $ convo_count = 0;
+        #$ answ1 = False
+        #$ answ2 = False
         menu miro_menu:
-            if convo_count > 0:
-                "Miro resumes editing his document"
             "Also, I think I recognize you":
-                $ convo_count += 1;
+                $ answone = True
                 player "Also, I think I recognize you"
                 mk "oh um. not sure I can say the same for you, but cool."
                 mk "you a new student here?"
-                    menu:
-                        "I just transferred here.":
-                            player "Oh, uh, yeah."
-                            player "I just transferred here."
-                            mk "ah, right."
-                            mk "i remember hearing somthing about a senior transfer student."
-                            mk "must be kind crazy to transfer now."
-                            player "Ha. yeah. It for sure is."
-                        "...":
-                            player "..."
-                    jump miro_menu
+                menu:
+                    "I just transferred here.":
+                        player "Oh, uh, yeah."
+                        player "I just transferred here."
+                        mk "ah, right."
+                        mk "i remember hearing somthing about a senior transfer student."
+                        mk "must be kind crazy to transfer now."
+                        player "Ha. yeah. It for sure is."
+                        jump miro_menu
+                    "...":
+                        player "..."
+                        jump miro_menu
             "Well, it's nice to meet you!":
-                $ convo_count += 1;
                 player "Well, it's nice to meet you!"
                 mk "nice to meet you too! XD"
                 mk "oh and i'm miro btw"
@@ -274,36 +275,36 @@ label part2:
                 mk "oh um, you know you're wearing a name tag right?"
                 "Looking down you see a sticker reading 'HELLO MY NAME IS [playerName]' slapped across your shirt"
                 "how funny...  -_-"
+                $ answone = True
                 jump miro_menu
-            if convo count > 0:
-                $ convo_count = 3;
-                "What are you working on?":
-                    player "What are you working on?"
-                    narrator "Miro seems somewhat surprised that you're still here."
-                    mk "application"
-                    mk "i've got to finish this one by tomorrow."
-                    m "*sigh*"
-                    "Miro pushes the conversation notes to the bottom doc, unable to work efficiently and chat through typing"
-                    m "Actually, I'm just realizing now that my application is basically worthless because I don't have any extracurriculars."
-                    m "...at least none that I can put on here..."
-                    m "...and this is my top school too!"
-                    jump miro_menu
-                "Well, I think I have to get going.":
-                    player "Well, I think I have to get going."
-                    player "I hope you're able to figure your application out!"
-                    m "Thanks!"
-            if convo count > 2:
-                "Wait, what do you mean about extracurriculars you can't put down?":
-                    player "Wait, what do you mean about extracurriculars you can't put down?"
-                    m "Well..."
-                    m "..."
-                    m "Are you... like... cool?"
-                    player "I'd like to think so"
-                    m "Okay, so I've worked at a couple restaurants around here to help my mom out, but they were all under the table or whatever."
-                    m "...which means I haven't had time to do any sports or clubs on top of saving time to study and, like, being there for some friends who really needed it recently. "
-                    menu:
+            "What are you working on?" if answone:
+                $ answ2 = True
+                player "What are you working on?"
+                narrator "Miro seems somewhat surprised that you're still here."
+                mk "application"
+                mk "i've got to finish this one by tomorrow."
+                m "*sigh*"
+                "Miro pushes the conversation notes to the bottom doc, unable to work efficiently and chat through typing"
+                m "Actually, I'm just realizing now that my application is basically worthless because I don't have any extracurriculars."
+                m "...at least none that I can put on here..."
+                m "...and this is my top school too!"
+                jump miro_menu
+            "Well, I think I have to get going." if answone:
+                player "Well, I think I have to get going."
+                player "I hope you're able to figure your application out!"
+                m "Thanks!"
+            "Wait, what do you mean about extracurriculars you can't put down?" if answ2:
+                player "Wait, what do you mean about extracurriculars you can't put down?"
+                m "Well..."
+                m "..."
+                m "Are you... like... cool?"
+                player "I'd like to think so"
+                m "Okay, so I've worked at a couple restaurants around here to help my mom out, but they were all under the table or whatever."
+                m "...which means I haven't had time to do any sports or clubs on top of saving time to study and, like, being there for some friends who really needed it recently. "
+                menu:
                     "I know what you mean, that's really rough":
                         "Miro nods eyes a bit glassy"
+                        jump miro_menu
                     "Whoa, I never really knew people had jobs like that in high school.":
                         miro "Yeah, honestly I know a lot of people around here who work these types of jobs."
                         miro "I've honestly met most of my close friends working these restaurant jobs."
@@ -311,10 +312,10 @@ label part2:
                         miro "Anyways, uh, sorry"
                         miro "I don't usually just talk about stuff this openly with random people"
                         miro "I think it's just the stress"
-                    jump miro_menu
+                        jump miro_menu
         miro "cool cool. Ope and let me know if you need help finding uh classes or whichever thing you transfer students need."
         player "Thanks! Will do."
-        player "Actually how do you leave this library"
+        player "Actually how do you leave this death trap library?"
         miro "Take a left than continue till the red storage boxes, go in between them, exit's on your left"
         "You give a thumbs up before heading off and following Miro's directions"
 
@@ -345,7 +346,7 @@ label part2:
         show bathroom
         narrator "You walk into the bathroom and see a girl standing in front of the mirror, applying lip gloss very carefully."
         narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
-        show rosalia standing
+        show ro
 
         menu:
             narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
@@ -389,14 +390,14 @@ label part2:
         rosalia "He's nice. I don't know, but it doesn't really matter." 
         rosalia "I just have to get to college and get as far away from here as I can."
         #FINISH ROSALIA SECTION (FIXME)
-        hide rosalia standing
+        hide ro
     label cecily:
         scene bg black
         show gym background
         
         narrator "You walk out of the bathroom, and see a girl fumbling with items in her locker. She's tossing items into an athletic bag, and as you walk by..."
         narrator "*SMACK*" #Sound effect (FIXME)
-        show cecily standing
+        show ce
         cecily "Oh my god! I'm so sorry!"
 
         menu:
@@ -487,7 +488,7 @@ label part2:
         cecily "That's definitely him. Uh, I gotta run!"
 
         narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
-        hide cecily standing
+        hide ce
 
         menu:
             ""
@@ -517,7 +518,7 @@ label part2:
                 $ui.interact()
                 hide screen applicationView
 
-        show jeremiah standing
+        show je
         thoughts "Okay Jeremiah, let's what I don't know about you."
         narrator "You go up to him"
         player "Hey, I like the music you're playing. Who is it?"
@@ -547,7 +548,7 @@ label part2:
         player "It's been... insightful talking to you. I'll see you around."
         jeremiah "Yeah, see ya!"
         narrator "He turns the music back up"
-        hide jeremiah standing
+        hide je
 
         menu:
             "View Application":
@@ -567,7 +568,7 @@ label part2:
         show lunch room background
     
         narrator "You end up in the cafeteria. You quickly notice there is one person that has captured the attention of many."
-        show jonathan standing
+        show jo
         thoughts "(Hmmm... that seems like someone else from the applications I should talk to. But who are they?)"
 
         menu:
@@ -597,7 +598,7 @@ label part2:
         jonathan "It would be a great way for you to meet some people."
         jonathan "I'd be happy to bring you along, if you'd like."
         thoughts "(He seems really nice. The kind of person I'd like as a friend...)"
-        hide jonathan standing
+        hide jo
 
         menu:
             ""

@@ -2,9 +2,25 @@
 errors listed below, and try again.
 
 
-File "game/script_part2.rpy", line 244: expected menuitem
-    if convo_count > 0:
-    ^
+File "game/script_part2.rpy", line 244: expected statement.
+    answ1 = False
+          ^
+
+File "game/script_part2.rpy", line 245: expected statement.
+    answ2 = False
+          ^
+
+File "game/script_part2.rpy", line 261: expected statement.
+    answ1 = True
+          ^
+
+File "game/script_part2.rpy", line 277: expected statement.
+    answ1 = True
+          ^
+
+File "game/script_part2.rpy", line 280: expected statement.
+    answ2 = True
+          ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Dec 15 04:30:43 2022
+Thu Dec 15 05:52:05 2022
