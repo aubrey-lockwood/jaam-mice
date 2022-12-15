@@ -84,9 +84,10 @@ label part2:
     hide w neutral
 
     scene bg black
-    show library background
+    #show bg black
 
     narrator "You are finally able to open your eyes and find yourself in a high school hallway"
+    show school hallway background
     narrator "A calendar on the wall lists the date as November 14th, 2021"
     narrator "You're in the same clothes(albeit blood free) and your work-bag-now-backpack is swung over your shoulder."
 
@@ -98,6 +99,10 @@ label part2:
         "Walk through the door for LIBRARY":
             $iHaveToPutABlockHere = 0
     label miro:
+        scene bg black
+        show bg black
+        show library background
+
         "It seems you are in the far recesses of the Mclaudin Prepatory School Library"
         "The quite numerous collection of books dots the shelves along with many storage boxes for what seems like an ambitious reorginization project."
         "You continue wandering the maze of back shelves."
@@ -230,7 +235,7 @@ label part2:
         player "......"
         mk "so uh, what did you nee my attention for btw?"
 
-        #__________________________
+        __________________________
         #MIRO MENU INTERFACE-IN
         $ convo_count = 0;
         menu miro_menu:
@@ -332,7 +337,6 @@ label part2:
             "Go to the Bathroom down the hall":
                 $iHaveToPutABlockHere = 0
 
-
     label rosalia:
         #show BATHROOM (FIXME)
         scene bg black
@@ -383,7 +387,7 @@ label part2:
         rosalia "He's nice. I don't know, but it doesn't really matter." 
         rosalia "I just have to get to college and get as far away from here as I can."
         #FINISH ROSALIA SECTION (FIXME)
-
+        hide rosalia standing
     label cecily:
         scene bg black
         show gym background
@@ -492,7 +496,6 @@ label part2:
                 $ui.interact()
                 hide screen changedApplicationView
     
-
     label jeremiah:
         scene bg black
         show parking lot background
@@ -542,7 +545,7 @@ label part2:
         player "It's been... insightful talking to you. I'll see you around."
         jeremiah "Yeah, see ya!"
         narrator "He turns the music back up"
-        hide jeremiah
+        hide jeremiah standing
 
         menu:
             "View Application":
@@ -610,7 +613,7 @@ label part2:
             "Go to P.E.":
                 $iHaveToPutABlockHere = 0
         show gym background
-        
+
         narrator "As you enter the gym, you see a dodgeball heading directly for your head!"
 
         narrator "*SMACK*"
