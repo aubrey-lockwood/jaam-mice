@@ -141,24 +141,26 @@ label part2:
                         "You wind thorugh the narrow shelves"
                         if lost == 0:
                             $ lost += 1
-                            jump fork;
-                        else if lost == 1:
-                            "The maze of a library has spat you out back where the boy from before is typing"
-                            "Maybe you should ask him for directions?"
-                            jump miro_introduce
+                            jump fork
                         else:
-                            jump fork;
+                            if lost == 1:
+                                "The maze of a library has spat you out back where the boy from before is typing"
+                                "Maybe you should ask him for directions?"
+                                jump miro_introduce
+                            else:
+                                jump fork
                     "Right":
                         "You wind thorugh the narrow shelves"
                         if lost == 0:
                             $ lost -= 1
-                            jump fork;
-                        else if lost == -1:
-                            "The maze of a library has spat you out back where the boy from before is typing"
-                            "Maybe you should ask him for directions?"
-                            jump miro_introduce
+                            jump fork
                         else:
-                            jump fork;
+                            if lost == -1:
+                                "The maze of a library has spat you out back where the boy from before is typing"
+                                "Maybe you should ask him for directions?"
+                                jump miro_introduce
+                            else:
+                                jump fork
         "But the guy continues typing at record speeds without removing his headphones."
 
         m "Not now cecily!"
@@ -235,7 +237,7 @@ label part2:
         player "......"
         mk "so uh, what did you nee my attention for btw?"
 
-        __________________________
+        #__________________________
         #MIRO MENU INTERFACE-IN
         $ convo_count = 0;
         menu miro_menu:
