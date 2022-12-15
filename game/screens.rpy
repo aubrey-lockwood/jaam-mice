@@ -281,10 +281,12 @@ style quick_button_text:
 ## For use in game2
 
 screen game2():
-    frame:
-        align (0.5, 0.35)
-        xsize 700
-        ysize 700
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
         vbox:
             label "Choose 5 Extracurriculars":
                 text_xalign 0.5
@@ -532,11 +534,57 @@ screen firstApplicationSort(appNum):
                     text ("Extracurricular Activities: \n" + extracurriculars):
                         color "#000000"
 
+## Binary Question
+##
+## Asks a binary question (for use in part 3)
+
+screen binaryQ(prompt, option1, option2):
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
+
+        text prompt:
+            xalign 0.5
+            yalign 0.2
+        hbox:
+            xalign 0.5
+            yalign 0.8
+
+            spacing 100
+
+            button:
+                xsize 400
+                ysize 100
+
+                
+                add Solid ("#13D810")
+
+                text option1:
+                    xalign 0.5
+                    yalign 0.5
+
+                    color "#000000"
 
 
 
+                action Return(True)
 
+            button: 
+                xsize 400
+                ysize 100
 
+                add Solid ("#F31010")
+
+                text option2:
+                    xalign 0.5
+                    yalign 0.5
+
+                    color "#000000"
+
+                action Return(False)
 
 
 ## Application Viewer 
@@ -685,10 +733,6 @@ screen changedApplicationView(appNum):
                     text (fact3):
                         color textColor 
 
-                    
-
-
-
 
 ## Application Counter
 ##
@@ -767,6 +811,7 @@ screen impossibleSort():
                 textbutton "Pass":
                     action Return(False)
         
+
 ## Bandaids
 ##
 ##

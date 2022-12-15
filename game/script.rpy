@@ -6,7 +6,8 @@
 define default_speed = 70
 
 define w = Character("Wizard", who_color="#13D1E9", what_slow_cps=default_speed, what_slow_abortable=True, image="w")
-image w neutral = Image("wizard_neutral.png", xalign=1.0, yalign=0.6, xsize=100, ysize=100)
+define w_slow = Character("Wizard", who_color="#13D1E9", what_slow_cps=4, what_slow_abortable=False, image="w")
+image w neutral = Image("wizard_neutral.png", xalign=0.155, yalign=0.36, xsize=100, ysize=100)
 
 
 define boss = Character("Boss", who_color="#F6B414", what_slow_cps=default_speed, what_slow_abortable=True)
@@ -670,16 +671,16 @@ label start:
                         
 
     label part3:
+        stop music
         scene bg black
-        show bg withpodium:
-            zoom 4.5
+        show bg gameshow:
+            zoom 0.4
         show w neutral:
             zoom 0.2
         with fade
             
 
-    play music "audio/part3music.mp3" 
-
+    # play music "audio/part3music.mp3" MUSIC DISABLED FOR SANITY (FIXME)
 
     w "HELLOOOOOOOOO! And welcome to the College Application Game Show!!! Your only source of non-stress-inducing, college application based entertainment- that may or may not have any real life consequences!!"
 
@@ -687,19 +688,29 @@ label start:
 
     w "How do you feel [playerName]? Are you ready to create your perfect application????"
 
-    menu ready:
-        w "How do you feel [playerName]? Are you ready to create your perfect application????"
-        "Yes":
-            w "Alrighty then, let’s..."
-            play sound "audio/applytocollegechant.mp3" fadeout 1.0
-            w "APPLY TO COLLEGE!!!"
+
+    window hide
+
+
+    show screen binaryQ("Are you ready to create the perfect application?", "Yes", "No")
+    if ui.interact(): 
+        hide screen binaryQ
+
+        w "Alrighty then, let’s..."
+        play sound "audio/applytocollegechant.mp3" fadeout 1.0
+        w_slow "APPLY TO COLLEGE!!!"
+        $renpy.pause(delay = 5.0, hard = True)
         
-        "No":
-            play sound "audio/laughtrackshort.mp3" fadeout 1.0
-            w "Sucks for you I guess!!! We're doing it anyway!"
-            w "Let's..."
-            play sound "audio/applytocollegechant.mp3" fadeout 1.0
-            w "APPLY TO COLLEGE!!!"
+        
+    else:
+        hide screen binaryQ
+
+        play sound "audio/laughtrackshort.mp3" fadeout 1.0
+        w "Sucks for you I guess!!! We're doing it anyway!"
+        w "Let's..."
+        play sound "audio/applytocollegechant.mp3" fadeout 1.0
+        w_slow "APPLY TO COLLEGE!!!"
+        $renpy.pause(delay = 5.0, hard = True)
         
 
     w "First up, you must decide on your background information." 
@@ -710,62 +721,94 @@ label start:
 
     label game1:
         
-    menu Game1_1:
-        w "What kind of family do you have?"
-        "Elf":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Fascinating!"
-        "Goblin":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Fascinating!"
+    w "What kind of family do you have?"
+    window hide
+    show screen binaryQ("What kind of family do you have?", "Elf", "Goblin")
+    if ui.interact():
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Fascinating!"
+    else:
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Fascinating!"
+    hide screen binaryQ
 
-    menu Game1_2:
-        w "And where do you live?"
-        "In a tree":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Wow, really?"
-        
-        "Under a bridge":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Wow, really?"
+    
+    w "And where do you live?"
+    window hide
+    show screen binaryQ("And where do you live?", "In a tree", "Under a bridge")
+    if ui.interact():
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Wow, really?"
+    else:
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Wow, really?"
+    hide screen binaryQ
 
-    menu Game1_3:
-        w "Next up, what do you like to eat for dinner?"
-        "Acorns":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Great choice!"
-        "Horse chesnuts":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Great choice!"
-    menu Game1_4:
-        w "How many fingers do you have?"
-        "More than seven":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Wow, I'd hate to have that many fingers!"
-        "Less than three":
-            play sound "audio/selectionnoiselow.mp3" fadeout 1.0
-            w "Wow, I'd hate to have that many fingers!"
+    w "Next up, what do you like to eat for dinner?"
+    window hide
+    show screen binaryQ("Next up, what do you like to eat for dinner?", "Acorns", "Horse Chestnuts")
+    if ui.interact():
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Great choice!"
+    else:
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Great choice!"
+    hide screen binaryQ
+
+    w "How many fingers do you have?"
+    window hide
+    show screen binaryQ("How many fingers do you have?", "More than seven", "Less than three")
+    if ui.interact():
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Wow, I'd hate to have that many fingers!"
+    else:
+        play sound "audio/selectionnoiselow.mp3" fadeout 1.0
+        w "Wow, I'd hate to have that many fingers!"
+    hide screen binaryQ
     
     stop music
 
     w "Our contestants have finished the first part of their applications. They deserve a big round of applause!"
 
-    play music "audio/part3music.mp3" 
+    # play music "audio/part3music.mp3" MUTED FOR SANITY (FIXME) 
 
     # Game 2
     label game2:
     
     w "Starting part 2, the resume!!!"
-                
+
     $ ec = {"Ferret training", "Blaseball", "Hackey Sack for Unicorns", "Troll Hair Designs", "Bed Frame Wood Testing", "Graveyard Patrol Volunteering", "Sitting on Babies", "The Toot Town Fart Symphony", "Wings for Fairies", "Ladder Testing", "Portabella Mushroom Connoisseur", "Pizza Throwing Club"}
     # This is a dictionary mapping a period to a ???? 
     default player_ec = {'?','?'}
 
     show screen game2
-
     $ ui.interact()
     hide screen game2
-    w "so did you do a thing?? [player_ec]"
+    
+    w "A perfectly understandable response from our contestant!"
+
+    stop music
+
+    w "Another big round of applause for [playerName]!"
+
+    label game3:
+
+    # play music "audio/part3music.mp3" MUTED FOR SANITY (FIXME)  
+
+    w "Last, but certainly not least, you must write your very own personal statement."
+
+    w "You must provide words of the specified type in order to complete your story about a lesson you have learned by overcoming a difficulty in your life."
+
+    w "When you're all done with that, I'll read your story in front of all these strangers!" 
+
+    window hide
+    show screen binaryQ("Are you ready?", "Sure", "Does it even matter anymore?")
+    if ui.interact():
+        w "Alrighty then, let's get started!"
+
+    else:
+        w "Nope! Let's get started!"
+    hide screen binaryQ
         
 
     # This ends the game.

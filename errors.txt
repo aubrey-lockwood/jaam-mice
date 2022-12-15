@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 666: expected 'simple_expression' not found.
-    with show bg black with fade
-         ^
+File "game/script.rpy", line 799: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation.
+    if ui.interact():
+    ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 17:48:47 2022
+Wed Dec 14 19:58:24 2022
