@@ -1,7 +1,6 @@
 label part2:
     stop music
     scene bg black
-    # show  OUTSIDE LIBRARY (FIXME)
 
     "........."
     show w neutral:
@@ -335,6 +334,7 @@ label part2:
         window hide
         menu miro_application2:
             "Check the application again":
+                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
                 show screen changedApplicationView(12)
                 $ui.interact()
                 hide screen changedApplicationView
@@ -358,7 +358,6 @@ label part2:
                 $iHaveToPutABlockHere = 0
 
     label rosalia:
-        #show BATHROOM (FIXME)
         scene bg black
         show bathroom:
             zoom 0.4
@@ -433,6 +432,7 @@ label part2:
             ""
             "Check the application again":
                 window hide
+                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
                 show screen changedApplicationView(13)
                 $ui.interact()
                 hide screen changedApplicationView
@@ -442,7 +442,8 @@ label part2:
                 zoom 0.4
 
         narrator "You walk out of the bathroom, and see a girl fumbling with items in her locker. She's tossing items into an athletic bag, and as you walk by..."
-        narrator "*SMACK*" #Sound effect (FIXME)
+        narrator "*SMACK*" 
+        #Sound effect (FIXME)
         show ce
         cecily "Oh my god! I'm so sorry!"
         menu:
@@ -535,6 +536,7 @@ label part2:
         menu:
             ""
             "Check the application again":
+                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
                 window hide
                 show screen changedApplicationView(11)
                 $ui.interact()
@@ -546,7 +548,7 @@ label part2:
 
         narrator "You are in the parking lot and see a guy leaning on his car with his hands crossed."
 
-        play music "audio/part3music.mp3" fadeout 1.0
+        play music "audio/jeremiahEmoMusic.mp3" fadeout 1.0
         narrator "There is music blaring from the stereo of his car."
         thoughts "(Oh, there's another applicant, I think)"
 
@@ -619,6 +621,7 @@ label part2:
         menu:
             "View Application":
                 window hide
+                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
                 show screen changedApplicationView(10)
                 $ui.interact()
                 hide screen changedApplicationView
@@ -672,6 +675,7 @@ label part2:
         menu:
             ""
             "View Application":
+                play sound "audio/newgameprogress.wav.mp3" fadeout 0.1
                 window hide
                 show screen changedApplicationView(14)
                 $ui.interact()
