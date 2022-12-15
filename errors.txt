@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 622: expected a keyword argument or end of line.
-    size = 40
-         ^
+File "game/script.rpy", line 911: menu statement expects a non-empty block.
+    menu
+        ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 20:58:55 2022
+Thu Dec 15 02:21:17 2022
