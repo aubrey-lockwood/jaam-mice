@@ -400,7 +400,7 @@ label part2:
                 $iHaveToPutABlockHere = 0
             "OW!":
                 $iHaveToPutABlockHere = 0
-        
+
         cecily "Sorry, I can't believe I was that careless. I'm so late for the volleyball bus-"
         paSystem "Volleyball players, the bus to today's tournament will be delayed until further notice."
         paSystem "On another note: If anyone has seen the bus driver, please contact office staff."
@@ -426,7 +426,6 @@ label part2:
         cecily "I have no idea what to do with my essay."
         cecily "I feel like I can barely talk about anything I did in high school"
         cecily "I've poured my life into the volleyball team here, but it's so hard to talk about, with my transiton happening in the middle of it all."
-
         cecily "The friends I made through volleyball and all the work involved in getting to where I am is so
         important to me, but I feel like I'll have to do so much explaining if I even mention I'm a trans athlete."
 
@@ -513,67 +512,39 @@ label part2:
                 $ui.interact()
                 hide screen applicationView
 
+        show jeremiah standing
         thoughts "Okay Jeremiah, let's what I don't know about you."
-
         narrator "You go up to him"
-
         player "Hey, I like the music you're playing. Who is it?"
-
         jeremiah "Well, actually, it's an original performed by me and my band. I'm on drum set."
-
         player "That's so cool! What's your band called?"
-
         jeremiah "Jacque Efercon. It's, like, super original."
-
         jeremiah "You've probably never heard anything like us before."
-
         thoughts "(Oh my god, is this guy serious?)"
-
         jeremiah "Oh, and I'm Jeremiah by the way."
-
         player "Hey, I'm [playerName]. And your band seems really..."
-
         player "...interesting..."
-
         player "That must look really good on college applications, right?"
-
         jeremiah "Oh yeah, I guess it could. I didn't put it on my application though, because I'm basically guarunteed to get into my top school."
-
         jeremiah "Both of my parents went there, and they donate like, a couple hundred grand every year too."
-
         jeremiah "If I don't get in, then the admissions office must have been taken over by aliens or something."
-
         player "It sounds like you've got everything figured out then."
-
         jeremiah "Yeah basically. What about you, what are your plans for after high school?"
-
         player "Oh, uhhh..."
-
         player "I'm not really sure."
-
         player "I just transferred here so I think I'm going to try to get my bearings before I make any concrete plans."
-
         player "I might take a gap year or start working."
-
         jeremiah "Pff, good luck with that."
-
         player "What's that supposed to mean?"
-
         jeremiah "I just meant like, my dad always says that if you don't go to college right after high school, then you're just lazy and going to end up a nobody."
-
         thoughts "(What is this guy saying? I can't believe his parents raised him to think like this!)"
-
         player "Wow, okay..."
-
         player "It's been... insightful talking to you. I'll see you around."
-
         jeremiah "Yeah, see ya!"
-
         narrator "He turns the music back up"
+        hide jeremiah
 
         menu:
-            ""
-
             "View Application":
                 window hide
                 show screen changedApplicationView(10)
@@ -581,21 +552,21 @@ label part2:
                 hide screen changedApplicationView
 
         thoughts "(These people are starting to seem pretty different in person than they do on their applications...)"
-
         menu:
             ""
-
             "Go to Lunch":
                 $iHaveToPutABlockHere = 0
 
     label jonathan:
+        scene bg black
+        show lunch room background
+    
         narrator "You end up in the cafeteria. You quickly notice there is one person that has captured the attention of many."
-
+        show jonathan standing
         thoughts "(Hmmm... that seems like someone else from the applications I should talk to. But who are they?)"
 
         menu:
             ""
-
             "View Application":
                 window hide
                 show screen applicationView(14)
@@ -603,42 +574,25 @@ label part2:
                 hide screen applicationView
 
         thoughts "(Oh! So this is *the* Jonathan that some of the other applicants mentioned.)" 
-
         thoughts "(Now what do I not know about you?)"
-
         narrator "You approach him."
-
         player "Hey, my name is [playerName], are you Jonathan?"
-
         jonathan "Yeah, I'm Jonathan, live and in the flesh!"
-
         jonathan "And hi, [playerName], it's nice to meet you. Are you new here?"
-
         thoughts "(This is starting to feel like Groundhog Day...)"
-
         player "Yeah, I just transferred."
-
         jonathan "Ah, that makes sense. You see, I kinda know everyone around here. That's my thing, I guess."
-
         player "How did you get to know everyone so well?"
-
         player "Do you play a lot of sports, or are you in a bunch of clubs?"
-
         jonathan "Not really, haha!"
-
         jonathan "I just really like going to school events. There's just more opportunities to get to know people."
-
         jonathan "Plus, once I get to know people, it's even more fun ot go support them at their events!"
-
         player "Oh, wow. It's awesome that you're so supportive of your friends."
-
         jonathan "You know what, there's actually a big volleyball game tonight. Are you planning on going?"
-
         jonathan "It would be a great way for you to meet some people."
-
         jonathan "I'd be happy to bring you along, if you'd like."
-
         thoughts "(He seems really nice. The kind of person I'd like as a friend...)"
+        hide jonathan standing
 
         menu:
             ""
@@ -649,12 +603,14 @@ label part2:
                 $ui.interact()
                 hide screen changedApplicationView
 
-        menu: 
+        menu:
+
             ""
 
             "Go to P.E.":
                 $iHaveToPutABlockHere = 0
-
+        show gym background
+        
         narrator "As you enter the gym, you see a dodgeball heading directly for your head!"
 
         narrator "*SMACK*"
