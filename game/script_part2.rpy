@@ -551,7 +551,7 @@ label part2:
         
         thoughts "Okay Jeremiah, let's see what you're like."
         narrator "You go up to him"
-        show je
+        show je at right
         player "Hey, I like the music you're playing. Who is it?"
         jeremiah "Well, actually, it's an original performed by me and my band. I'm on drum set."
         $ i = 0;
