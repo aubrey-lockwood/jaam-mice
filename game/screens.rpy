@@ -749,7 +749,10 @@ screen changedApplicationView(appNum):
                 spacing 375
                 xsize 400
 
-                #add photo based on appNum (FIXME)
+                image "[appNum].png": 
+                
+                    ysize 500
+                    xsize 400
 
                 textbutton "Dismiss":
                     xalign 0.75
