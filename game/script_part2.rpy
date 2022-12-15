@@ -689,5 +689,3 @@ label part2:
         show bg black with fade
 
         jump part3
-
-            
