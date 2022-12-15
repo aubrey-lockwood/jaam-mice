@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _('Admissions of Truth')
+define config.name = _('The College Admissions Game Show!')
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -24,7 +24,7 @@ define config.version = "1.0"
 
 ## The version of the game.
 
-define gui.about = _("Created by Aubrey L, Audrey H, Mira H, and Julia C.\n\nMade for our UARTS 150 Class's MICE Project, play a fun game about College Admissions(how incredibly delightful!).")
+define gui.about = _("Created by Aubrey L, Audrey H, Mira H, and Julia C.\n\n Made for our UARTS 150 Class's MICE Project, play a fun game about College Admissions (how incredibly delightful!).\n\n Game Show music credit to Kevin McLeod \n\n Jeremiah's midwest emo music credit to Prod. Pekarot")
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -35,7 +35,7 @@ define gui.about = _("Created by Aubrey L, Audrey H, Mira H, and Julia C.\n\nMad
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Jaam"
+define build.name = "JAAM"
 
 
 ## Sounds and music ############################################################

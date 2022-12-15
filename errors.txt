@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 181: end of line expected.
-    jump part 2
-              ^
+File "game/script.rpy", line 42: Line is indented, but the preceding jump statement statement does not expect a block. Please check this line's indentation.
+    label part1:
+    ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Dec 15 10:06:16 2022
+Thu Dec 15 12:04:49 2022

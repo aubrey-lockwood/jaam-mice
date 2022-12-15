@@ -37,7 +37,11 @@ define paSystem = Character("PA System", what_slow_cps=default_speed, what_slow_
 label start:
 
 
+
+
     label part1:
+
+    
 
     scene bg black
     show bg black
@@ -57,7 +61,6 @@ label start:
     show bg bosspresent with fade
 
     boss "Hello [playerName]. I have a nice new stack of applications for you to go through today."
-
 
     boss "Remember, you have to decide whether they should be recommended for admittance to our university or not."
     boss "Don't forget to look back at the specifications I gave you for who should be admitted or not! It's really important that you stick to those rules, because having certain types of students will really make the university look good." # add emphasis on "certain students?"
@@ -376,17 +379,16 @@ label start:
     show screen readStory()
     with fade
     $ui.interact()
+    hide screen readStory
     
     label ending:
 
     show bg gameshow
-
     show w neutral:
             zoom 0.2
-
     w "Alright, now that you have crafted your resume, your activities, and written your personal statement, your application is ready to be reviewed by our wonderful panel of judges!"
 
-    w "...and by panel of judges, I mean me and all of the voices that speak to me. Haha!"
+    w "...and by panel of judges, I mean me and all of the voices in my head. Haha!"
 
     w "Please wait a few seconds while we deliberate."
 
@@ -405,7 +407,7 @@ label start:
 
     if (renpy.random.randint(1,2) == 1):
         show screen accepted()
-        w "Oh wow, congradulations! It seems like all your hard work really paid off."
+        w "Oh wow, congratulations! It seems like all your hard work really paid off."
     
     else:
         show screen rejected()
@@ -443,9 +445,7 @@ label start:
     hide screen accepted
     hide screen rejected
 
-    show screen credits
-
-    $ui.interact()
+    #show screen credits
 
 
     # This ends the game.
