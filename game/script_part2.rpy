@@ -429,6 +429,13 @@ label part2:
         "Rosalia Finishes putting on her lipgloss, "
         "and with a final pop of her lips, she breezes out of the bathroom."
         hide ro
+        menu rosalia_application2:
+            ""
+            "Check the application again":
+                window hide
+                show screen changedApplicationView(13)
+                $ui.interact()
+                hide screen changedApplicationView
     label cecily:
         scene bg black
         show school hallway background at center:
@@ -561,6 +568,9 @@ label part2:
                 jeremiah "Jacque Efercon. It's, like, super original."
                 jeremiah "You've probably never heard anything like us before."
                 player "mmmhhhhmmmmm"
+                jeremiah "Jacque Efercon is the name of my dog. I got Jacque Efercon 4ish years ago when he's a small lil pupster."
+                jeremiah "He's been our bands mascot ever since. We've kind of all grown up together"
+                jeremiah "Well Jacque Efercon IS my best bro first."
                 $i+=1
                 if i < 2:
                     jump jeremiah_main
