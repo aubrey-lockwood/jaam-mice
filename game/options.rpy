@@ -12,8 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Jaam")
-
+define config.name = _('Admissions of Truth')
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -21,16 +20,15 @@ define config.name = _("Jaam")
 define gui.show_name = True
 
 
+define config.version = "1.0"
+
 ## The version of the game.
 
-define config.version = "1.0"
+define gui.about = _("Created by Aubrey L, Audrey H, Mira H, and Julia C.\n\nMade for our UARTS 150 Class's MICE Project, play a fun game about College Admissions(how incredibly delightful!).")
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
-
-define gui.about = _p("""
-""")
 
 
 ## A short name for the game used for executables and directories in the built

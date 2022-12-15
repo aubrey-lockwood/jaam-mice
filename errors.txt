@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 622: expected a keyword argument or end of line.
-    size = 40
-         ^
+File "game/script_part2.rpy", line 407: invalid syntax
+    i++
+    
+
+File "game/script_part2.rpy", line 416: invalid syntax
+    i++
+    
+
+File "game/script_part2.rpy", line 426: invalid syntax
+    i++
+    
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec 14 20:58:55 2022
+Thu Dec 15 08:26:46 2022

@@ -5,7 +5,7 @@ Marching Band Drum Major,JV Tennis,JV Soccer
 200
 Line
 
-fact1
-fact2
-fact3
+Narscisistic
+Enjoys vibing to music in solitude
+Treats his dog better than most anyone
 #d19900
