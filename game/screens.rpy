@@ -281,10 +281,12 @@ style quick_button_text:
 ## For use in game2
 
 screen game2():
-    frame:
-        align (0.5, 0.35)
-        xsize 700
-        ysize 700
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
         vbox:
             label "Choose 5 Extracurriculars":
                 text_xalign 0.5
@@ -532,12 +534,109 @@ screen firstApplicationSort(appNum):
                     text ("Extracurricular Activities: \n" + extracurriculars):
                         color "#000000"
 
+## Binary Question
+##
+## Asks a binary question (for use in part 3)
+
+screen binaryQ(prompt, option1, option2):
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
+
+        text prompt:
+            xalign 0.5
+            yalign 0.2
+        hbox:
+            xalign 0.5
+            yalign 0.8
+
+            spacing 100
+
+            button:
+                xsize 400
+                ysize 100
+
+                
+                add Solid ("#13D810")
+
+                text option1:
+                    xalign 0.5
+                    yalign 0.5
+
+                    color "#000000"
 
 
 
+                action Return(True)
 
+            button: 
+                xsize 400
+                ysize 100
 
+                add Solid ("#F31010")
 
+                text option2:
+                    xalign 0.5
+                    yalign 0.5
+
+                    color "#000000"
+
+                action Return(False)
+
+## Text Input
+## 
+## Prompts the user to enter text (for use in part 3)
+
+screen textInput(prompt):
+    fixed:
+        xalign 0.895
+        yalign 0.26
+
+        xsize 1015
+        ysize 715
+
+        text prompt:
+            xalign 0.5
+            yalign 0.2
+        input:
+            xalign 0.5
+            yalign 0.8
+
+## Story Reader
+##
+## For reading the player's madlib story in part 3
+
+screen readStory():
+    fixed:
+        xsize 1200
+        ysize 850
+
+        xalign 0.75
+        yalign 0.5
+
+        text "Back when I was [age], my [relativeType] [relativeName] told me, 'Never quit [verb], or else you will never make it out of here in one piece. You will end up a [nounLoser]. This is the only phrase that got me through [highSchoolClass]. I took [highSchoolClass] when I was a [highSchoolYear]. It was by far the [adjectiveSuper] class I ever took. The teacher was so [adjectiveTeacher]. I got a [testScore] on almost every test. Every time I felt like quitting, though, I remember the words that my [relativeType] told me. This saying gets me through everything, especially when I feel like [verb]. And sometimes, it gives me hope that my [relativeType] will eventually come back from [location] so that they can see all the [adjective] things I have accomplished.":
+            text_align 0.5
+            size 35
+            line_spacing 20
+            adjust_spacing True
+
+        fixed:
+            xalign 0.5
+            yalign 0.99
+
+            xsize 200
+            ysize 80
+            button:
+                add Solid ("#F31010")
+                action Return()
+
+            text "Close":
+                xalign 0.5
+                yalign 0.5
+                color "#000000"
 
 ## Application Viewer 
 ##
@@ -685,10 +784,6 @@ screen changedApplicationView(appNum):
                     text (fact3):
                         color textColor 
 
-                    
-
-
-
 
 ## Application Counter
 ##
@@ -767,6 +862,7 @@ screen impossibleSort():
                 textbutton "Pass":
                     action Return(False)
         
+
 ## Bandaids
 ##
 ##
