@@ -16,12 +16,11 @@ define boss = Character("Boss", who_color="#F6B414", what_slow_cps=default_speed
 define narrator = Character("", who_color="#209D02", what_slow_cps=default_speed, what_slow_abortable=True)
 define thoughts = Character("", who_color="#C55226", what_slow_cps=default_speed, what_slow_abortable=True)
 
-define miro = Character("Miro", who_color="#5032c7", what_slow_cps=default_speed, what_slow_abortable=True)
 define m = Character("Miro", who_color="#5032c7", what_slow_cps=default_speed, what_slow_abortable=True)
-define rosalia = Character("Rosalía", who_color="#d42f68", what_slow_cps=default_speed, what_slow_abortable=True)
-define cecily = Character("Cecily", who_color="#6197ed", what_slow_cps=default_speed, what_slow_abortable=True)
-define jeremiah = Character("Jeremiah", who_color="#d19900", what_slow_cps=default_speed, what_slow_abortable=True)
-define jonathan = Character("Jonathan", who_color="#24500d", what_slow_cps=default_speed, what_slow_abortable=True)
+define r = Character("Rosalía", who_color="#d42f68", what_slow_cps=default_speed, what_slow_abortable=True)
+define c = Character("Cecily", who_color="#6197ed", what_slow_cps=default_speed, what_slow_abortable=True)
+define j = Character("Jeremiah", who_color="#d19900", what_slow_cps=default_speed, what_slow_abortable=True)
+define jo = Character("Jonathan", who_color="#24500d", what_slow_cps=default_speed, what_slow_abortable=True)
 
 define paSystem = Character("PA System", what_slow_cps=default_speed, what_slow_abortable=True)
 

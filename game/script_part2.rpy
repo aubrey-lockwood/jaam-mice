@@ -1,5 +1,3 @@
-"fnkdsajknfdnljanjk.sdrvgftkdgfkm,jdrgfvkmj,drfl"
-
 label part2:
     stop music
     scene bg black
@@ -84,6 +82,9 @@ label part2:
     w "Best of luck."
     w "You'll need it."
     hide w neutral
+
+    scene bg black
+    show library background
 
     narrator "You are finally able to open your eyes and find yourself in a high school hallway"
     narrator "A calendar on the wall lists the date as November 14th, 2021"
@@ -275,23 +276,23 @@ label part2:
                     mk "i've got to finish this one by tomorrow."
                     m "*sigh*"
                     "Miro pushes the conversation notes to the bottom doc, unable to work efficiently and chat through typing"
-                    miro "Actually, I'm just realizing now that my application is basically worthless because I don't have any extracurriculars."
-                    miro "...at least none that I can put on here..."
-                    miro "...and this is my top school too!"
+                    m "Actually, I'm just realizing now that my application is basically worthless because I don't have any extracurriculars."
+                    m "...at least none that I can put on here..."
+                    m "...and this is my top school too!"
                     jump miro_menu
                 "Well, I think I have to get going.":
                     player "Well, I think I have to get going."
                     player "I hope you're able to figure your application out!"
-                    miro "Thanks!"
+                    m "Thanks!"
             if convo count > 2:
                 "Wait, what do you mean about extracurriculars you can't put down?":
                     player "Wait, what do you mean about extracurriculars you can't put down?"
-                    miro "Well..."
-                    miro "..."
-                    miro "Are you... like... cool?"
+                    m "Well..."
+                    m "..."
+                    m "Are you... like... cool?"
                     player "I'd like to think so"
-                    miro "Okay, so I've worked at a couple restaurants around here to help my mom out, but they were all under the table or whatever."
-                    miro "...which means I haven't had time to do any sports or clubs on top of saving time to study and, like, being there for some friends who really needed it recently. "
+                    m "Okay, so I've worked at a couple restaurants around here to help my mom out, but they were all under the table or whatever."
+                    m "...which means I haven't had time to do any sports or clubs on top of saving time to study and, like, being there for some friends who really needed it recently. "
                     menu:
                     "I know what you mean, that's really rough":
                         "Miro nods eyes a bit glassy"
@@ -329,42 +330,32 @@ label part2:
                 "Best not return anytime soon."
             "Go to the Bathroom down the hall":
                 $iHaveToPutABlockHere = 0
+
+
     label rosalia:
         
         #show BATHROOM (FIXME)
-
-        
-
+        scene bg black
+        show bathroom
         narrator "You walk into the bathroom and see a girl standing in front of the mirror, applying lip gloss very carefully."
-
         narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
-
-        #show Rosalia (FIXME)
+        show rosalia standing
 
         menu:
             narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
-
             "Leave":
                 rosalia "Where do you think you're going?"
-
                 player "Uh, what?"
-
                 rosalia "Oh, I just meant like..."
-
                 rosalia "You don't have to leave just because I'm here."
-
                 player "Okay..."
-
                 player "...thanks?"
-
             "Stay":
                 $iHaveToPutABlockHere = 0
-        
         thoughts "(Wait, I think she might be one of the applicants too)"
         window hide
         menu rosalia_application:
             thoughts "(Wait, I think she might be one of the applicants too)"
-
             "View Application":
                 hide window
                 show screen applicationView(13)
@@ -372,53 +363,33 @@ label part2:
                 hide screen applicationView
 
         thoughts "(Maybe I should talk to her, like I talked to Miro."
-
         player "Hey, you wouldn't happen to be Rosalía by chance, would you?"
-
         rosalia "Who's asking?"
-
         player "Me?"
-
         rosalia "And who are you, exactly?"
-
         player "Oh, I'm a new student here. I just transferred."
-
         rosalia "Ugh, imagine transferring here. I would NOT want to be you."
-
         rosalia "This school kinda sucks."
-
         player "What do you mean?"
-
         rosalia "Well, there aren't many extracurricular activities offered here that look good on college applications."
-
         rosalia "I had to do almost all of mine, like, in the community, or whatever."
-
         rosalia "But because there wasn't much to do here, that meant that there is a lot of pressure on community service, at least for me."
-
         rosalia "Thanks Mom!"
-
         player "Well, how are the people here? It seems like they're pretty nice."
-
         rosalia "I'm not entirely sure, actually."
-
         rosalia "I've never really had time to focus on the whole friend thing"
-
         rosalia "and even when I do try to talk to people, everyone seems, like, intimidated or something."
-
         rosalia "The only person I kinda know is Jonathan. Have you met him?"
-
         rosalia "He's nice. I don't know, but it doesn't really matter." 
-        
         rosalia "I just have to get to college and get as far away from here as I can."
-
         #FINISH ROSALIA SECTION (FIXME)
 
     label cecily:
+        scene bg black
+        show gym background
         
         narrator "You walk out of the bathroom, and see a girl fumbling with items in her locker. She's tossing items into an athletic bag, and as you walk by..."
-        
         narrator "*SMACK*" #Sound effect (FIXME)
-
         cecily "Oh my god! I'm so sorry!"
 
         menu:
@@ -426,81 +397,56 @@ label part2:
 
             "Don't worry, it's fine":
                 $iHaveToPutABlockHere = 0
-
             "OW!":
                 $iHaveToPutABlockHere = 0
         
         cecily "Sorry, I can't believe I was that careless. I'm so late for the volleyball bus-"
-
         paSystem "Volleyball players, the bus to today's tournament will be delayed until further notice."
-
         paSystem "On another note: If anyone has seen the bus driver, please contact office staff."
-
         cecily "Well, I guess I rushed for nothing."
-
         narrator "She sits down next to her locker, catching her breath"
-
         thoughts "(Another person from the applications! I should check hers again...)"
 
         menu:
             "(Another person from the applications! I should check hers again...)"
 
             "View application":
-                window hide                    
+                window hide
                 show screen applicationView(11)
                 $ui.interact()
                 hide screen applicationView
 
-
         cecily "This team is so tiring..."
-
         cecily "I love being the captain, but between the team, classes, and filling out applications, I'm always running."
-
         cecily "I'm Cecily, I don't think we've met before"
-
         player "I'm [playerName], I'm new here."
-
         cecily "Oh, cool. Hopefully you've got all your applications all figured out already."
-
         player "How is your application going?"
-
         cecily "I have no idea what to do with my essay."
-
         cecily "I feel like I can barely talk about anything I did in high school"
-
         cecily "I've poured my life into the volleyball team here, but it's so hard to talk about, with my transiton happening in the middle of it all."
 
         cecily "The friends I made through volleyball and all the work involved in getting to where I am is so
         important to me, but I feel like I'll have to do so much explaining if I even mention I'm a trans athlete."
 
         player "What do you mean?"
-
         cecily "I guess it's just that people have made it such an issue."
-
         cecily "It stresses me out every day, and I have no clue who's going to be reading this"
-
         cecily "Like, even a bunch of 'well meaning, progressive people' don't know anything about how my life works."
-
         cecily "I end up feeling like I have to walk them through every step of understanding basic things about me."
-
         player "That sounds difficult. How did you manage that?"
-
         cecily "My friends are a huge help, especially Miro."
-
         cecily "Despite being busy literaly all the time, he's dropped everything more than once to help when I've been overwhelmed by everything."
-        
         player "Oh, I met Miro earlier! He seemed..."
 
         menu:
             player "Oh, I met Miro earlier! He seemed..."
-
             "Cold":
                 cecily "Yeah, I think that's a lot of peoples' first impression of him."
 
                 cecily "But if you get to know him, you kinda figure him out."
 
                 cecily "He's really good at listening, and is actually willing to put in work to help his friends."
-
             "Stressed":
 
                 cecily "Yeah, he's really worried about applications."
@@ -535,6 +481,7 @@ label part2:
         cecily "That's definitely him. Uh, I gotta run!"
 
         narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
+        hide cecily standing
 
         menu:
             ""
@@ -544,9 +491,12 @@ label part2:
                 show screen changedApplicationView(11)
                 $ui.interact()
                 hide screen changedApplicationView
-
+    
 
     label jeremiah:
+        scene bg black
+        show parking lot background
+
         narrator "You are in the parking lot and see a guy leaning on his car with his hands crossed."
 
         narrator "There is music blaring from the stereo of his car."
