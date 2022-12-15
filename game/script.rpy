@@ -816,7 +816,134 @@ label start:
     else:
         w "Nope! Let's get started!"
     hide screen binaryQ
-        
+
+    show screen textInput("Enter a number!")
+    $ age = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a type of family relation, like 'sister' or 'cousin'!")
+    $ relativeType = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a verb ending in ing, like 'jumping'!")
+    $ verb = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a noun, like 'frog'!")
+    $ nounLoser = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a regular adjective, like 'silly'!")
+    $ adjectiveTeacher = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a class you might take at a high school, like 'American Literature'!")
+    $ highSchoolClass = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a person's name!")        
+    $ relativeName = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter an adjective, like 'wonderful'!")
+    $ adjective = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a number!")
+    $ testScore = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a year in high school, like 'sophomore' or 'first year'")
+    $ highSchoolYear = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a location, like 'Alcatraz'!")
+    $ location = ui.interact()
+    hide screen textInput
+
+    show screen textInput("Enter a superlative adjective (ending in -est), like 'easiest'!")
+    $ adjectiveSuper = ui.interact()
+    hide screen textInput
+
+    w "Okay! It's time to read your story!"
+
+    window hide
+    hide w neutral
+    show bg gameshowscreen
+    show screen readStory()
+    with fade
+    $ui.interact()
+    
+    label ending:
+
+    show bg gameshow
+
+    show w neutral:
+            zoom 0.2
+
+    w "Alright, now that you have crafted your resume, your activities, and written your personal statement, your application is ready to be reviewed by our wonderful panel of judges!"
+
+    w "...and by panel of judges, I mean me and all of the voices that speak to me. Haha!"
+
+    w "Please wait a few seconds while we deliberate."
+
+    menu:
+
+        "Yes! I'm so ready!":
+            w "Awesome, now let's see that decision..."
+            w_slow "......................................."
+            
+            $renpy.pause(delay=5, hard=True)
+
+        "No! I don't even want to know...":
+            w "Me neither! Haha. Let's see that decision anyway..."
+            w_slow "......................................."
+            $renpy.pause(delay=5, hard=True)
+
+    if (renpy.random.randint(1,2) == 1):
+        show screen accepted()
+        w "Oh wow, congradulations! It seems like all your hard work really paid off."
+    
+    else:
+        show screen rejected()
+        w "Ooh... that's gotta hurt."
+        w "Oh well, guess you'll have to try harder next time."
+
+        player "Wait, why didn't I get in?"
+
+        w "Eh, I guess I just didn't feel like it."
+
+        player "But how is that in any way fair?"
+
+        w "Well, I guess it isn't. Haha"
+
+    w "Well, now you that you have your college decision from the official College Application Game Show do you want to..."
+    
+    w "Go back to the high school community, with all the real people you met, even if you might not get into college."
+
+    w "Or............"
+
+    w "Go back to your life as an admissions officer, even after you've learned everything you have about these people you're making decisions about."
+
+    menu:
+        "What will you choose?"
+
+        "Go back to the high school community":
+            $iHaveToPutABlockHere = 0
+
+        "Go back to your life as an admissions officer":
+            $iHaveToPutABlockHere = 0
+
+    w "That's the end! Thanks for playing!!"
+
+    scene bg black
+    hide screen accepted
+    hide screen rejected
+
+    show screen credits
+
+    $ui.interact()
+
 
     # This ends the game.
-    return
+    return 
