@@ -16,21 +16,26 @@ define boss = Character("Boss", who_color="#F6B414", what_slow_cps=default_speed
 define narrator = Character("", who_color="#209D02", what_slow_cps=default_speed, what_slow_abortable=True)
 define thoughts = Character("", who_color="#C55226", what_slow_cps=default_speed, what_slow_abortable=True)
 
+
+define answ1 = True
+define answ2 = False
+
 define m = Character("Miro", who_color="#5032c7", what_slow_cps=default_speed, what_slow_abortable=True)
-image mi = Image("miro standing.png", xalign=0.155, yalign=0.36, xsize=50, ysize=50)
+image mi = Image("miro standing.png", xalign=0.155, yalign=0.36, xsize=40, ysize=40)
 define mk = Character("miroh@mclaud.org computer screen", who_color="#5032c7", what_slow_cps=default_speed, what_slow_abortable=True)
 define rosalia = Character("Rosalía", who_color="#d42f68", what_slow_cps=default_speed, what_slow_abortable=True)
-image ro = Image("miro standing.png", xalign=0.155, yalign=0.36, xsize=100, ysize=100)
+image ro = Image("rosalia standing.png", xalign=0.155, yalign=0.36, xsize=40, ysize=40)
 define cecily = Character("Cecily", who_color="#6197ed", what_slow_cps=default_speed, what_slow_abortable=True)
-image ce = Image("cecily standing.png", xalign=0.155, yalign=0.36, xsize=100, ysize=100)
+image ce = Image("cecily standing.png", xalign=0.155, yalign=0.36, xsize=40, ysize=40)
 define jeremiah = Character("Jeremiah", who_color="#d19900", what_slow_cps=default_speed, what_slow_abortable=True)
-image je = Image("jeremiah standing.png", xalign=0.155, yalign=0.36, xsize=100, ysize=100)
+image je = Image("jeramiah standing.png", xalign=0.155, yalign=0.36, xsize=40, ysize=40)
 define jonathan = Character("Jonathan", who_color="#24500d", what_slow_cps=default_speed, what_slow_abortable=True)
-image jo = Image("jonathan standing.png", xalign=0.155, yalign=0.36, xsize=100, ysize=100)
+image jo = Image("jonathan standing.png", xalign=0.155, yalign=0.36, xsize=40, ysize=40)
 define paSystem = Character("PA System", what_slow_cps=default_speed, what_slow_abortable=True)
 
 # The game starts here.
 label start:
+
 
     label part1:
 

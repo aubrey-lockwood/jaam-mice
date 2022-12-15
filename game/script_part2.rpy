@@ -23,13 +23,13 @@ label part2:
     mysterious"Ah. So you've finally regained your consciousness. I was afraid you wouldn't wake up at all."
     menu:
         "...":
-            player ""
+            player "..."
         "Who... are you?":
             player "Who... are you?"
         "Why can't I open my eyes?":
             player "Why can't I open my eyes?"
-    mysterious"No matter, no matter, my dear! I am on a limited.... schedule, or so you could say."
-    "I'll only say it once, so pay close attention"
+    mysterious"No matter, no matter! I am on a limited.... schedule, so you could say."
+    mysterious"I'll only say it once, so pay close attention"
     menu:
         mysterious "Ready?"
         "Ready.":
@@ -37,8 +37,8 @@ label part2:
         "(Try to nod)":
             "You unsuccesfully try to nod"
         "...":
-            player ""
-    mysterious "You, the lucky soul, have been selected to play, mmmm a game."
+            player "..."
+    mysterious "You, the lucky soul, have been selected to play, ermmmm a game."
     mysterious "Now after speanding ungodly tedious hours sorting through idiotic students' meaningless papers... YOU, "
     mysterious "yes, YOU"
     mysterious "Can finally have the Overly-Romanticized High School Story you've always dreamed of!"
@@ -171,7 +171,7 @@ label part2:
         m "Oh, right! Cecily, I should get all this finalized and Ready. To. go. In uh… "
         m "30 or so minutes."
         m "Give or take."
-        m "Ah yes beautiful, oh now, the table of contents is out of order. Fix that…"
+        m "Ah yes beautiful, oh now, the formatting isn't in chronological order. Ope, Fix that…"
         menu attention:
             "Tap Miro's shoulder again":
                 "You tap Miro's shoulder again, more urgently."
@@ -205,7 +205,7 @@ label part2:
                     $ keyboard += 1;
                     jump typin
                 else:
-                    mk "i got mixed up, thought you were my friend..ahhh"
+                    mk "i got mixed up, thought you were a friend..ahhh"
                     mk "i didn't realize ahkhjbfrakldfskl"
             "Tap Miro's shoulder AGAIN":
                 "Miro types away unaffected"
@@ -216,9 +216,9 @@ label part2:
                 player "I didn't know how else to get your attention."
                 "Miro glares at you before snatching back his headphones and returning to typing madly"
                 jump typin
-        mk "i really thought you were cecily i swear,"
+        mk "i really thought you were cecily i swear"
         mk "no one else ever really talks to me in the library."
-        player "It's also good, don't worry"
+        player "It's all good, don't worry"
         mk "oh ok. umahh"
         mk "you sure?"
         menu:
@@ -234,18 +234,17 @@ label part2:
                 player "See? We're chill."
                 mk ":)"
         player "......"
-        mk "......"
+        m "......"
         player "......"
-        mk "so uh, what did you nee my attention for btw?"
 
         #__________________________
         #MIRO MENU INTERFACE-IN
         $ convo_count = 0;
-        #$ answ1 = False
-        #$ answ2 = False
+
         menu miro_menu:
+            "Miro returns to diligently typing his document."
             "Also, I think I recognize you":
-                $ answone = True
+                $ answ1 = True
                 player "Also, I think I recognize you"
                 mk "oh um. not sure I can say the same for you, but cool."
                 mk "you a new student here?"
@@ -258,8 +257,20 @@ label part2:
                         mk "must be kind crazy to transfer now."
                         player "Ha. yeah. It for sure is."
                         jump miro_menu
-                    "...":
-                        player "..."
+                    "...new... student?":
+                        player "...new... student?"
+                        mk "so... like a transfer?"
+                        player "Uh, yeah! yeah. A transfer"
+                    "Well, actually it's a crazy story...":
+                        player "Well, actually it's a crazy story..."
+                        player "Yep, I got kidnapped by a wizard,"
+                        player "And was cursed to live inside of the awkward body of a high school senior."
+                        mk "sounds rough"
+                        player "It is."
+                        mk "so your not the transfer student there's been rumors about"
+                        player "Rumors?"
+                        player "I... guess I'm just that popular, what can I say."
+                        "Shaking his head,"
                         jump miro_menu
             "Well, it's nice to meet you!":
                 player "Well, it's nice to meet you!"
@@ -275,9 +286,9 @@ label part2:
                 mk "oh um, you know you're wearing a name tag right?"
                 "Looking down you see a sticker reading 'HELLO MY NAME IS [playerName]' slapped across your shirt"
                 "how funny...  -_-"
-                $ answone = True
+                $ answ1 = True
                 jump miro_menu
-            "What are you working on?" if answone:
+            "What are you working on?" if answ1:
                 $ answ2 = True
                 player "What are you working on?"
                 narrator "Miro seems somewhat surprised that you're still here."
@@ -289,7 +300,7 @@ label part2:
                 m "...at least none that I can put on here..."
                 m "...and this is my top school too!"
                 jump miro_menu
-            "Well, I think I have to get going." if answone:
+            "Well, I think I have to get going." if answ2:
                 player "Well, I think I have to get going."
                 player "I hope you're able to figure your application out!"
                 m "Thanks!"
@@ -306,18 +317,20 @@ label part2:
                         "Miro nods eyes a bit glassy"
                         jump miro_menu
                     "Whoa, I never really knew people had jobs like that in high school.":
-                        miro "Yeah, honestly I know a lot of people around here who work these types of jobs."
-                        miro "I've honestly met most of my close friends working these restaurant jobs."
-                        miro "I actually only talk to a couple people here, like my friend Cecily and this guy named Jonathan that everyone seems to know."
-                        miro "Anyways, uh, sorry"
-                        miro "I don't usually just talk about stuff this openly with random people"
-                        miro "I think it's just the stress"
+                        m "Yeah, honestly I know a lot of people around here who work these types of jobs."
+                        m "I've honestly met most of my close friends working these restaurant jobs."
+                        m "I actually only talk to a couple people here, like my friend Cecily and this guy named Jonathan that everyone seems to know."
+                        m "Anyways, uh, sorry"
+                        m "I don't usually just talk about stuff this openly with random people"
+                        m "I think it's just the stress"
                         jump miro_menu
-        miro "cool cool. Ope and let me know if you need help finding uh classes or whichever thing you transfer students need."
+        m "Ope and let me know if you need help finding uh classes or whichever thing you transfer students need."
         player "Thanks! Will do."
         player "Actually how do you leave this death trap library?"
-        miro "Take a left than continue till the red storage boxes, go in between them, exit's on your left"
+        m "Take a left than continue till the red storage boxes, go in between them, exit's on your left"
         "You give a thumbs up before heading off and following Miro's directions"
+
+        hide mi
 
         window hide
         menu miro_application2:
@@ -326,8 +339,12 @@ label part2:
                 $ui.interact()
                 hide screen changedApplicationView
 
+        scene bg black
+        show school hallway background:
+            zoom 0.4
+
         menu leave_library:
-            "Your back in the cooridor from earlier. Again there's only two options in this twisted school."
+            "You're back in the cooridor from earlier. Again there's only two options in this twisted corner of the school."
             "Return to Library":
                 "You wander around the library for even longer than before."
                 "You fint Miro's hidden study spot, but the guy has packed off and left now."
@@ -343,10 +360,10 @@ label part2:
     label rosalia:
         #show BATHROOM (FIXME)
         scene bg black
-        show bathroom
+        show bathroom:
+            zoom 0.4
         narrator "You walk into the bathroom and see a girl standing in front of the mirror, applying lip gloss very carefully."
-        narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
-        show ro
+        show ro at right
 
         menu:
             narrator "You almost meet eyes, but you look away after she gives you an intimidating look."
@@ -359,154 +376,168 @@ label part2:
                 player "...thanks?"
             "Stay":
                 $iHaveToPutABlockHere = 0
-        thoughts "(Wait, I think she might be one of the applicants too)"
+                "You wash your hands."
+                "Just to have some sort of reason for going into the bathroom"
+                "You dry your hands."
+        
+        rosalia "Ughah. I can't stand this school."
+        thoughts "(She also seems familiar...)"
+        "You sift through your old work bag that's now a backpack."
+        "Commedically enough, the applications you were reading this morning are perfectly preserved."
+        thoughts "All of the applications I read today came from this district..."
         window hide
         menu rosalia_application:
-            thoughts "(Wait, I think she might be one of the applicants too)"
-            "View Application":
+            thoughts "(I think she might be one of the applicants too)"
+            "Look for the girl's file":
                 hide window
                 show screen applicationView(13)
                 $ui.interact()
                 hide screen applicationView
-
-        thoughts "(Maybe I should talk to her, like I talked to Miro."
-        player "Hey, you wouldn't happen to be Rosalía by chance, would you?"
-        rosalia "Who's asking?"
-        player "Me?"
-        rosalia "And who are you, exactly?"
-        player "Oh, I'm a new student here. I just transferred."
-        rosalia "Ugh, imagine transferring here. I would NOT want to be you."
-        rosalia "This school kinda sucks."
-        player "What do you mean?"
-        rosalia "Well, there aren't many extracurricular activities offered here that look good on college applications."
-        rosalia "I had to do almost all of mine, like, in the community, or whatever."
-        rosalia "But because there wasn't much to do here, that meant that there is a lot of pressure on community service, at least for me."
-        rosalia "Thanks Mom!"
-        player "Well, how are the people here? It seems like they're pretty nice."
-        rosalia "I'm not entirely sure, actually."
-        rosalia "I've never really had time to focus on the whole friend thing"
-        rosalia "and even when I do try to talk to people, everyone seems, like, intimidated or something."
-        rosalia "The only person I kinda know is Jonathan. Have you met him?"
-        rosalia "He's nice. I don't know, but it doesn't really matter." 
-        rosalia "I just have to get to college and get as far away from here as I can."
-        #FINISH ROSALIA SECTION (FIXME)
+        $ i = 0;
+        menu rosalia_main:
+            "Hey, you wouldn't happen to be Rosalía by chance, would you?":
+                player "Hey, you wouldn't happen to be Rosalía by chance, would you?"
+                rosalia "Who's asking?"
+                player "Me?"
+                rosalia "And who are you, exactly?"
+                player "Oh, I'm a new student here. I just transferred."
+                rosalia "Ugh, imagine transferring here. I would NOT want to be you."
+                rosalia "This school,"
+                rosalia "it kinda sucks."
+                $i+=1
+                if i < 2:
+                    jump rosalia_main
+            "What's so horrible about the school?":
+                player "What's so horrible about the school?"
+                rosalia "Well, there aren't many extracurricular activities offered here that look good on college applications."
+                rosalia "I had to do almost all of mine, like, in the community, or whatever."
+                rosalia "But because there wasn't much to do here, that meant that there is a lot of pressure on community service, at least for me."
+                rosalia "Thanks Mom!"
+                $i+=1
+                if i < 2:
+                    jump rosalia_main
+            "Are the people here at least nice?.":
+                rosalia "I'm not entirely sure, actually."
+                rosalia "I've never really had time to focus on the whole friend thing"
+                rosalia "and even when I do try to talk to people, everyone seems, like, intimidated or something."
+                rosalia "The only person I kinda know is Jonathan. Have you met him?"
+                rosalia "He's nice. I don't know, but it doesn't really matter." 
+                rosalia "I just have to get to college and get as far away from here as I can."
+                $i+=1
+                if i < 2:
+                    jump rosalia_main
+        "Rosalia Finishes putting on her lipgloss, "
+        "and with a final pop of her lips, she breezes out of the bathroom."
         hide ro
     label cecily:
         scene bg black
-        show gym background
-        
+        show school hallway background at center:
+                zoom 0.4
+
         narrator "You walk out of the bathroom, and see a girl fumbling with items in her locker. She's tossing items into an athletic bag, and as you walk by..."
         narrator "*SMACK*" #Sound effect (FIXME)
         show ce
         cecily "Oh my god! I'm so sorry!"
-
         menu:
             cecily "Oh my god! I'm so sorry!"
-
             "Don't worry, it's fine":
-                $iHaveToPutABlockHere = 0
-            "OW!":
-                $iHaveToPutABlockHere = 0
-
-        cecily "Sorry, I can't believe I was that careless. I'm so late for the volleyball bus-"
+                cecily "Sorry, I can't believe I was that careless. I'm so late for the volleyball bus-"
+            "(Help pick up some of her dropped items)":
+                cecily "Oh thank you so much, you have no idea how-"
         paSystem "Volleyball players, the bus to today's tournament will be delayed until further notice."
         paSystem "On another note: If anyone has seen the bus driver, please contact office staff."
+        cecily "*sigh*..."
         cecily "Well, I guess I rushed for nothing."
         narrator "She sits down next to her locker, catching her breath"
-        thoughts "(Another person from the applications! I should check hers again...)"
 
-        menu:
-            "(Another person from the applications! I should check hers again...)"
-
-            "View application":
+        $answ1 = False
+        menu cecily_main:
+            "She also seems familiar. Check her application":
                 window hide
                 show screen applicationView(11)
                 $ui.interact()
                 hide screen applicationView
-
-        cecily "This team is so tiring..."
-        cecily "I love being the captain, but between the team, classes, and filling out applications, I'm always running."
-        cecily "I'm Cecily, I don't think we've met before"
-        player "I'm [playerName], I'm new here."
-        cecily "Oh, cool. Hopefully you've got all your applications all figured out already."
-        player "How is your application going?"
-        cecily "I have no idea what to do with my essay."
-        cecily "I feel like I can barely talk about anything I did in high school"
-        cecily "I've poured my life into the volleyball team here, but it's so hard to talk about, with my transiton happening in the middle of it all."
-        cecily "The friends I made through volleyball and all the work involved in getting to where I am is so
-        important to me, but I feel like I'll have to do so much explaining if I even mention I'm a trans athlete."
-
-        player "What do you mean?"
-        cecily "I guess it's just that people have made it such an issue."
-        cecily "It stresses me out every day, and I have no clue who's going to be reading this"
-        cecily "Like, even a bunch of 'well meaning, progressive people' don't know anything about how my life works."
-        cecily "I end up feeling like I have to walk them through every step of understanding basic things about me."
-        player "That sounds difficult. How did you manage that?"
-        cecily "My friends are a huge help, especially Miro."
-        cecily "Despite being busy literaly all the time, he's dropped everything more than once to help when I've been overwhelmed by everything."
-        player "Oh, I met Miro earlier! He seemed..."
-
-        menu:
-            player "Oh, I met Miro earlier! He seemed..."
-            "Cold":
-                cecily "Yeah, I think that's a lot of peoples' first impression of him."
-
-                cecily "But if you get to know him, you kinda figure him out."
-
-                cecily "He's really good at listening, and is actually willing to put in work to help his friends."
-            "Stressed":
-
-                cecily "Yeah, he's really worried about applications."
-
-                cecily "He says he doesn't have any extracurriculars he can record"
-
-                cecily "It's honestly crazy to me that anyone could look at him and think he's not doing enough."
-
-                cecily "I usually worry he's doing too much..."
-
-                cecily "Not only does he literally work jobs to support his family, but he's the kind of person to really 
-                put in work to support his friends."
-
-        player "He sounds like a really good friend"
-
-        cecily "Yeah, between him and Jonathan, I've got a lot of support here"
-
-        player "People keep mentioning Jonathan. How is he?"
-
-        cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
-
-        cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
-
-        narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
-
-        narrator "A man zooms past you in the hallway, heading for the main entrance!"
-
-        cecily "Is that... the bus driver?"
-
-        cecily "OH!"
-
-        cecily "That's definitely him. Uh, I gotta run!"
-
-        narrator "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
+                jump cecily_main
+            "So, volleyball?":
+                cecily "This team is so tiring..."
+                cecily "I love being the captain, but between the team, classes, and filling out applications, I'm always running."
+                jump cecily_main
+            "Nice to meet you.":
+                player "Nice to meet you."
+                player "Now that you don't have to run to your game"
+                cecily "I'm Cecily, I don't think we've met before"
+                player "I'm [playerName], I'm new here."
+                cecily "Oh, are you the senior transfer?"
+                player "That's... me all right."
+                cecily "Oh, cool. Have you gotten all your applications done already, then?"
+                player "It's still a bit of a mystery."
+                jump cecily_main
+            "How are your college apps going?":
+                $answ1 = True
+                player "How is your application going?"
+                cecily "I have no idea what to do with my essay."
+                player "How so?"
+                cecily "I feel like I can barely talk about anything I did in high school"
+                cecily "I've poured my life into the volleyball team here"
+                cecily "but that doesn't mean it's not hard to talk about..."
+                cecily "with my transiton happening in the middle of it all."
+                cecily "The friends I made through volleyball and all the work involved in getting to where I am is so
+                important to me, but I feel like I'll have to do so much explaining if I even mention I'm a trans athlete."
+                jump cecily_main
+            "What makes you feel like you'll have to explain so much?" if answ1:
+                player "What makes you feel like you'll have to explain so much?"
+                cecily "I guess it's just that people have made it such an issue."
+                cecily "It stresses me out every day, and I have no clue who's going to be reading this"
+                cecily "Like, even a bunch of 'well meaning, progressive people' don't know anything about how my life works."
+                cecily "I end up feeling like I have to walk them through every step of understanding basic things about me."
+                jump cecily_main
+            "Your friends sound really awesome and supportive at least." if answ1:
+                player "Your friends sound really awesome and supportive at least."
+                cecily "Yeah, My friends are a huge help, especially Miro."
+                cecily "Despite being busy literaly all the time, he's dropped everything more than once to help when I've been overwhelmed by everything."
+                menu:
+                    player "Oh, I met Miro earlier! He seemed..."
+                    "Introverted":
+                        cecily "Yeah, I think that's a lot of peoples' first impression of him."
+                        cecily "But if you get to know him, you kinda figure him out."
+                        cecily "He's really good at listening, and is actually willing to put in work to help his friends."
+                    "Stressed":
+                        cecily "Yeah, he's really worried about applications."
+                        cecily "He says he doesn't have any extracurriculars he can record"
+                        cecily "It's honestly crazy to me that anyone could look at him and think he's not doing enough."
+                        cecily "I usually worry he's doing too much..."
+                        cecily "Not only does he literally work jobs to support his family, but he's the kind of person to really 
+                        put in work to support his friends."
+                player "He sounds like a really good friend"
+                cecily "Yeah, between him and Jonathan, I've got a lot of support here"
+                player "People keep mentioning Jonathan. How is he?"
+                cecily "Oh, Jonathan is great! He's kinda involved in everything here a little bit."
+                cecily "Like, he's not on the volleyball team or anything, but he does scorekeeping for our games."
+                narrator "Suddenly, a door slams open" #Sound effect? (FIXME)
+                narrator "A man zooms past you in the hallway, heading for the main entrance!"
+                player "hmmmmm"
+                menu:
+                    "Is that... the bus driver?":
+                        cecily "OH!"
+                    "Wait a second......":
+                        cecily "The bus driver!"
+                cecily "That's definitely him. Uh, I gotta run!"
+                "Cecily quickly grabs her bag and sprints after the fleeing bus driver"
         hide ce
-
         menu:
             ""
-
             "Check the application again":
                 window hide
                 show screen changedApplicationView(11)
                 $ui.interact()
                 hide screen changedApplicationView
-    
     label jeremiah:
         scene bg black
-        show parking lot background
+        show parking lot background:
+            zoom 0.4
 
         narrator "You are in the parking lot and see a guy leaning on his car with his hands crossed."
-
         narrator "There is music blaring from the stereo of his car."
-        
         thoughts "(Oh, there's another applicant, I think)"
 
         menu:
@@ -517,55 +548,78 @@ label part2:
                 show screen applicationView(10)
                 $ui.interact()
                 hide screen applicationView
-
-        show je
-        thoughts "Okay Jeremiah, let's what I don't know about you."
+        
+        thoughts "Okay Jeremiah, let's see what you're like."
         narrator "You go up to him"
+        show je
         player "Hey, I like the music you're playing. Who is it?"
         jeremiah "Well, actually, it's an original performed by me and my band. I'm on drum set."
-        player "That's so cool! What's your band called?"
-        jeremiah "Jacque Efercon. It's, like, super original."
-        jeremiah "You've probably never heard anything like us before."
-        thoughts "(Oh my god, is this guy serious?)"
-        jeremiah "Oh, and I'm Jeremiah by the way."
-        player "Hey, I'm [playerName]. And your band seems really..."
-        player "...interesting..."
-        player "That must look really good on college applications, right?"
-        jeremiah "Oh yeah, I guess it could. I didn't put it on my application though, because I'm basically guarunteed to get into my top school."
-        jeremiah "Both of my parents went there, and they donate like, a couple hundred grand every year too."
-        jeremiah "If I don't get in, then the admissions office must have been taken over by aliens or something."
-        player "It sounds like you've got everything figured out then."
-        jeremiah "Yeah basically. What about you, what are your plans for after high school?"
-        player "Oh, uhhh..."
-        player "I'm not really sure."
-        player "I just transferred here so I think I'm going to try to get my bearings before I make any concrete plans."
-        player "I might take a gap year or start working."
-        jeremiah "Pff, good luck with that."
-        player "What's that supposed to mean?"
-        jeremiah "I just meant like, my dad always says that if you don't go to college right after high school, then you're just lazy and going to end up a nobody."
-        thoughts "(What is this guy saying? I can't believe his parents raised him to think like this!)"
-        player "Wow, okay..."
+        $ i = 0;
+        menu jeremiah_main:
+            "Cool! What's your band called?":
+                player "Cool! What's your band called?"
+                jeremiah "Jacque Efercon. It's, like, super original."
+                jeremiah "You've probably never heard anything like us before."
+                player "mmmhhhhmmmmm"
+                $i+=1
+                if i < 2:
+                    jump jeremiah_main
+            "Hey, I'm [playerName]":
+                player "Hey, I'm [playerName]. And your band seems really..."
+                player "...interesting..."
+                jeremiah "Oh, I'm Jeremiah by the way."
+                "You nod."
+                $i+=1
+                if i < 2:
+                    jump jeremiah_main
+            "Does your band look good on college applications?":
+                player "Does your band look good on college applications, then?"
+                jeremiah "Oh yeah, I guess it could. I didn't put it on my application though, because I'm basically guarunteed to get into my top school."
+                jeremiah "Both of my parents went there, and they donate like, a couple hundred grand every year too."
+                jeremiah "If I don't get in, then the admissions office must have been taken over by aliens or something."
+                player "It sounds like you've got everything figured out then."
+                jeremiah "Yeah basically. What about you, what are your plans for after high school?"
+                menu:
+                    player "Oh, uhhh..."
+                    "I'm not really sure.":
+                        jeremiah "oof. Well you better figure that out soon"
+                        jeremiah "If not, you could end up just sitting around all day"
+                    "I just transferred here so I think I'm going to try to get my bearings before I make any concrete plans.":
+                        jeremiah "So why'd your parents move yah schools so late in the game?"
+                        jeremiah "You do anything to piss them off so badly?"
+                        player "....."
+                    "I might take a gap year or start working.":
+                        jeremiah "Pff, good luck with that."
+                        player "What's that supposed to mean?"
+                        jeremiah "I just meant like, my dad always says that if you don't go to college right after high school, then you're just lazy and going to end up a nobody."
+                        thoughts "!!!!"
+                        player "Wow, okay..."
+                $i+=1
+                if i < 2:
+                    jump jeremiah_main
         player "It's been... insightful talking to you. I'll see you around."
         jeremiah "Yeah, see ya!"
         narrator "He turns the music back up"
         hide je
-
         menu:
             "View Application":
                 window hide
                 show screen changedApplicationView(10)
                 $ui.interact()
                 hide screen changedApplicationView
-
-        thoughts "(These people are starting to seem pretty different in person than they do on their applications...)"
-        menu:
-            ""
+        thoughts "(How much does this really tell you about a person?)"
+        menu screamin:
+            "SCREAM":
+                "You let out an extremely satisfying burst of now externalized previously internalized rage"
+                player"AHEHHEHAHHHEHAHHHESHESWESHAHAHAAAAAAAAAAWWWWWWWWWW"
+                jump screamin
             "Go to Lunch":
                 $iHaveToPutABlockHere = 0
 
     label jonathan:
         scene bg black
-        show lunch room background
+        show lunch room background:
+            zoom 0.4
     
         narrator "You end up in the cafeteria. You quickly notice there is one person that has captured the attention of many."
         show jo
@@ -615,12 +669,15 @@ label part2:
 
             "Go to P.E.":
                 $iHaveToPutABlockHere = 0
-        show gym background
+        show gym background:
+            zoom 0.4
 
         narrator "As you enter the gym, you see a dodgeball heading directly for your head!"
 
         narrator "*SMACK*"
 
         show bg black with fade
+
+        jump part3
 
             

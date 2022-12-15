@@ -2,25 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script_part2.rpy", line 244: expected statement.
-    answ1 = False
-          ^
+File "game/script_part2.rpy", line 407: invalid syntax
+    i++
+    
 
-File "game/script_part2.rpy", line 245: expected statement.
-    answ2 = False
-          ^
+File "game/script_part2.rpy", line 416: invalid syntax
+    i++
+    
 
-File "game/script_part2.rpy", line 261: expected statement.
-    answ1 = True
-          ^
-
-File "game/script_part2.rpy", line 277: expected statement.
-    answ1 = True
-          ^
-
-File "game/script_part2.rpy", line 280: expected statement.
-    answ2 = True
-          ^
+File "game/script_part2.rpy", line 426: invalid syntax
+    i++
+    
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Dec 15 05:52:05 2022
+Thu Dec 15 08:26:46 2022
