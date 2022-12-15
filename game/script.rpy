@@ -374,7 +374,12 @@ label start:
             
     #         rosalia "I just have to get to college and get as far away from here as I can."
 
-    #         #FINISH ROSALIA SECTION (FIXME)
+    #         player "Wow. That sounds rough."
+
+    #         rosalia "Yeah. It's fine though. Everything will be fine."
+
+    #         rosalia "Anyways, I have to get to class. Maybe I'll see you around."
+
 
     #     label cecily:
             
