@@ -730,7 +730,7 @@ screen changedApplicationView(appNum):
 
     frame:
 
-        background Frame("images/open manilla folder with paper.png")
+        background Frame("images/snazzy manilla folder.png")
         xsize 2000
         ysize 1600
 
